@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 --> 
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
+
+                <div class="dashboard-detail-title-wrap col-group">
+                    <button onclick="history.back();" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </button>
+                    <h2 class="dashboard-detail-title">
+                        Hardware Add
+                    </h2>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="account-wrap">
+                        <div class="modify-group col-group">
+                            <div>
+                                <form action="">
+                                    <p class="form-title form-identify-title gray">
+                                        System Information
+                                    </p>
+                                    <div class="account-form row-group"> 
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                System Category
+                                            </p>
+                                            <div class="item-user">
+                                                <select class="form-select" id="group">
+                                                    <option value="1">1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                System Name
+                                            </p>
+                                            <div class="item-user">
+                                                <select class="form-select" id="group">
+                                                    <option value="1">1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="">
+                                    <p class="form-title form-identify-title purple">
+                                        Hardware components
+                                    </p>
+                                    <div class="account-form row-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Name
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Location
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Model
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item-group col-group">
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Q'ty
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Ver.
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    RJ45
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    USB
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Serial
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    IP Address
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="form-btn-wrap col-group">
+                            <button class="form-btn" onclick="update()">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

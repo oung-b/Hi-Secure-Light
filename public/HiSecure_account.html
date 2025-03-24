@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
+
+                <div class="dashboard-detail-title-wrap col-group">
+                    <button onclick="history.back();" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </button>
+                    <h2 class="dashboard-detail-title">
+                        Hi-Secure Account
+                    </h2>
+                </div>
+                
+                <div class="account-table-container">
+                    <div class="account-table-title-wrap">
+                        <h3 class="account-table-title">
+                            Users
+                        </h3>
+                        <div class="account-top-btn-wrap">
+                            <a href="HiSecure_account_add.html" class="account-top-btn">
+                                Add
+                            </a>
+                            <button class="account-top-btn">
+                                Delete
+                            </button>
+                            <a href="HiSecure_account_modify.html" class="account-top-btn">
+                                Modify
+                            </a>
+                            <a href="HiSecure_account_setting.html" class="account-top-btn">
+                                Global Setting
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="account-table-wrap">
+                        <table>
+                            <colgroup>
+                                <col width="48px">
+                            </colgroup>
+                            <thead>
+                                <th>
+                                    <label for="check_all" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_all">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                        </div>
+                                    </label>
+                                </th>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    User Name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    <label for="sort_group" class="sort-item">
+                                        Group
+                                        <input type="checkbox" id="sort_group">
+                                        <i class="xi-caret-down-min"></i>
+                                    </label>
+                                    <!-- <div class="select-group">
+                                        <p class="select-default">
+                                            Group
+                                            <i class="xi-caret-down-min"></i>
+                                        </p>
+                                        <div class="select-list">
+                                            <a href="" class="select-option">
+                                                option1
+                                            </a>
+                                            <a href="" class="select-option">
+                                                option2
+                                            </a>
+                                        </div>
+                                    </div> -->
+                                </th>
+                                <th>
+                                    <label for="sort_authority" class="sort-item">
+                                        Authority
+                                        <input type="checkbox" id="sort_authority">
+                                        <i class="xi-caret-down-min"></i>
+                                    </label>
+                                    <!-- <div class="select-group">
+                                        <p class="select-default">
+                                            Authority
+                                            <i class="xi-caret-down-min"></i>
+                                        </p>
+                                        <div class="select-list">
+                                            <a href="" class="select-option">
+                                                option1
+                                            </a>
+                                            <a href="" class="select-option">
+                                                option2
+                                            </a>
+                                        </div>
+                                    </div> -->
+                                </th>
+                                <th>
+                                    Active/Paused
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        PRTG System Administator
+                                    </td>
+                                    <td>
+                                        PRTG (Administator)
+                                    </td>
+                                    <td>
+                                        abcd1234@gmail.com
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        PRTG Administator
+                                    </td>
+                                    <td>
+                                        <label for="switch_1" class="switch-wrap">
+                                            <input type="checkbox" id="switch_1">
+                                            <div class="switch-icon">
+                                                <p class="paused-txt">
+                                                    Paused
+                                                </p>
+                                                <p class="active-txt">
+                                                    Active
+                                                </p>
+                                                <div class="switch-core"></div>
+                                            </div>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+ <!-- alert 팝업 -->
+ <div class="modal-container modal-alert" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap warning">
+
+        <div class="modal-alert-txt-wrap">
+            <div class="modal-alert-title-wrap row-group">
+                <i class="xi-warning icon"></i>
+                <p class="modal-alert-title">
+                    Warning
+                </p>
+            </div>
+
+            <p class="modal-alert-txt">
+                If deleted, the data cannot be recovered. <br>
+                Are you sure you want to delete?
+            </p>
+        </div>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn submit-btn" onclick="remove()">
+                Delete
+            </button>
+            <button class="dashboard-form-btn cancel-btn">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
+    // let domain = "http://localhost:90";
+    let domain = "http://hi-secure.ufeed.co.kr";
+
+    function store(){
+        let form = {
+            ids: $("#ids").val(),
+            password: $("#password").val(),
+            password_confirmation: $("#password_confirmation").val(),
+            authority: 1,
+            email: $("#email").val(),
+        };
+
+        $(".error").text("");
+
+        axios.post(domain + "/api/users", form)
+            .then(response => {
+                alert("Processed Successfully");
+            }).catch(error => {
+            if(error.response.data.errors)
+                Object.entries(error.response.data.errors).map(error => {
+                    $(`#error-${error[0]}`).text(error[1]);
+                })
+        })
+    }
+
+    $('.select-default').click(function(){
+        $(this).next('.select-list').show();
+    });
+
+</script>
+</html>

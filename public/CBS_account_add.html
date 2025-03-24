@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-group col-group">
+                        <a href="CBS_account_add.html" class="dashboard-menu-item active">
+                            Account Add
+                        </a>
+                        <a href="CBS_account_del.html" class="dashboard-menu-item">
+                            Account Delete
+                        </a>
+                        <a href="CBS_account_modify.html" class="dashboard-menu-item">
+                            Account Modify
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap dashboard-modify-wrap">
+                        <div class="dashboard-form-title">
+                            CBS Account Add
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form-group col-group">
+                                <div class="dashboard-form row-group">
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            ID
+                                        </p>
+                                        <div class="item-user col-group">
+                                            <input type="text" class="form-input">
+                                            <button class="form-user-btn">
+                                                Duplicate Check
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Password
+                                        </p>
+                                        <input type="password" class="form-input">
+                                        <p class="sub-txt">
+                                            Password must be at least 8 characters long, <br>
+                                            must contain letters in mixed case and must contain numbers.
+                                        </p>
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Confirm Password
+                                        </p>
+                                        <input type="password" class="form-input">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Authority
+                                        </p>
+                                        <select class="form-select"></select>
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            E-Mail
+                                        </p>
+                                        <input type="email" class="form-input">
+                                    </div>
+                                </div>
+                                <div class="dashboard-form row-group">
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            User Name
+                                        </p>
+                                        <input type="text" class="form-input">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Zone
+                                        </p>
+                                        <input type="text" class="form-input">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Confirm Password
+                                        </p>
+                                        <input type="password" class="form-input">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Asset Name
+                                        </p>
+                                        <input type="password" class="form-input">
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Period of use
+                                        </p>
+                                        <input type="password" class="form-input">
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

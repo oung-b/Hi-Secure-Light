@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Firewall
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Policy
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            IPS
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            IPv4 Policy
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subpage-table-container">
+                    <div class="dashboard-menu-wrap col-group">
+                        <div class="dashboard-menu-group col-group">
+                            <a href="ahnlab_IPv4_create.html" class="dashboard-menu-item active">
+                                기본
+                            </a>
+                            <a href="ahnlab_IPv4_create_detail.html" class="dashboard-menu-item">
+                                상세
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="create-wrap">
+                        <form action="">
+                            <div class="create-option-wrap col-group">
+                                <div class="create-option-item">
+                                    <label for="check_1" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_1">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            사용
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="create-option-item opacity">
+                                    정책 아이디 : 3
+                                </div>
+                                <div class="create-option-item opacity">
+                                    우선순위 : 0
+                                </div>
+                                <div class="create-option-item">
+                                    처리 방법
+                                    <select name="" id="" class="create-select">
+                                        <option value="허용">허용</option>
+                                    </select>
+                                </div>
+                                <div class="create-option-item">
+                                    <label for="check_2" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_2">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            양방향 정책 사용
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="create-option-item">
+                                    <label for="check_3" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_3">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            VLAN ID 사용
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="create-option-item">
+                                    <input type="number" class="create-input" value="0">
+                                </div>
+                            </div>
+    
+                            <div class="create-group col-group">
+                                <div class="create-item">
+                                    <div class="create-title-wrap col-group">
+                                        <p class="create-title">
+                                            출발지
+                                        </p>
+                                        <div class="create-input-wrap">
+                                            <input type="text" class="create-input">
+                                            <button class="create-input-btn sticker">
+                                                <i class="xi-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="create-table-wrap">
+                                        <table class="create-table">
+                                            <colgroup>
+                                                <col width="30px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <i class="xi-close icon"></i>
+                                                    </th>
+                                                    <th>
+                                                        이름
+                                                    </th>
+                                                    <th>
+                                                        주소
+                                                    </th>
+                                                    <th>
+                                                        NIF
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="create-title-wrap col-group">
+                                        <div class="create-move-btn-wrap row-group">
+                                            <button class="create-move-btn">
+                                                <i class="xi-angle-up"></i>
+                                            </button>
+                                            <button class="create-move-btn">
+                                                <i class="xi-angle-down"></i>
+                                            </button>
+                                        </div>
+                                        <select name="" id="" class="create-select">
+                                            <option value="전체">전체</option>
+                                        </select>
+                                        <div class="create-input-wrap create-search-wrap">
+                                            <input type="text" class="create-input">
+                                            <button class="create-search-button sticker">
+                                                <i class="xi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="create-table-wrap">
+                                        <table class="create-table">
+                                            <colgroup>
+                                                <col width="30px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <i class="xi-plus icon"></i>
+                                                    </th>
+                                                    <th>
+                                                        이름
+                                                    </th>
+                                                    <th>
+                                                        주소
+                                                    </th>
+                                                    <th>
+                                                        NIF
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <select class="create-footer-select create-title-wrap">
+                                        <option value="객체 만들기">객체 만들기</option>
+                                    </select>
+                                </div>
+                                <div class="create-item">
+                                    <div class="create-title-wrap col-group">
+                                        <p class="create-title">
+                                            목적지
+                                        </p>
+                                        <div class="create-input-wrap">
+                                            <input type="text" class="create-input">
+                                            <button class="create-input-btn sticker">
+                                                <i class="xi-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="create-table-wrap">
+                                        <table class="create-table">
+                                            <colgroup>
+                                                <col width="30px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <i class="xi-close icon"></i>
+                                                    </th>
+                                                    <th>
+                                                        이름
+                                                    </th>
+                                                    <th>
+                                                        주소
+                                                    </th>
+                                                    <th>
+                                                        NIF
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="create-title-wrap col-group">
+                                        <div class="create-move-btn-wrap row-group">
+                                            <button class="create-move-btn">
+                                                <i class="xi-angle-up"></i>
+                                            </button>
+                                            <button class="create-move-btn">
+                                                <i class="xi-angle-down"></i>
+                                            </button>
+                                        </div>
+                                        <select name="" id="" class="create-select">
+                                            <option value="전체">전체</option>
+                                        </select>
+                                        <div class="create-input-wrap create-search-wrap">
+                                            <input type="text" class="create-input">
+                                            <button class="create-search-button sticker">
+                                                <i class="xi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="create-table-wrap">
+                                        <table class="create-table">
+                                            <colgroup>
+                                                <col width="30px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <i class="xi-plus icon"></i>
+                                                    </th>
+                                                    <th>
+                                                        이름
+                                                    </th>
+                                                    <th>
+                                                        주소
+                                                    </th>
+                                                    <th>
+                                                        NIF
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <select class="create-footer-select create-title-wrap">
+                                        <option value="객체 만들기">객체 만들기</option>
+                                    </select>
+                                </div>
+                                <div class="create-item">
+                                    <div class="create-title-wrap col-group">
+                                        <p class="create-title">
+                                            서비스
+                                        </p>
+                                        <div class="create-input-wrap">
+                                            <input type="text" class="create-input">
+                                            <button class="create-input-btn sticker">
+                                                <i class="xi-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="create-table-wrap">
+                                        <table class="create-table">
+                                            <colgroup>
+                                                <col width="30px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <i class="xi-close icon"></i>
+                                                    </th>
+                                                    <th>
+                                                        이름
+                                                    </th>
+                                                    <th>
+                                                        주소
+                                                    </th>
+                                                    <th>
+                                                        NIF
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-close icon red"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="create-title-wrap col-group">
+                                        <div class="create-move-btn-wrap row-group">
+                                            <button class="create-move-btn">
+                                                <i class="xi-angle-up"></i>
+                                            </button>
+                                            <button class="create-move-btn">
+                                                <i class="xi-angle-down"></i>
+                                            </button>
+                                        </div>
+                                        <select name="" id="" class="create-select">
+                                            <option value="전체">전체</option>
+                                        </select>
+                                        <div class="create-input-wrap create-search-wrap">
+                                            <input type="text" class="create-input">
+                                            <button class="create-search-button sticker">
+                                                <i class="xi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="create-table-wrap">
+                                        <table class="create-table">
+                                            <colgroup>
+                                                <col width="30px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <i class="xi-plus icon"></i>
+                                                    </th>
+                                                    <th>
+                                                        이름
+                                                    </th>
+                                                    <th>
+                                                        주소
+                                                    </th>
+                                                    <th>
+                                                        NIF
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="xi-plus icon green"></i>
+                                                    </td>
+                                                    <td>
+                                                        All
+                                                    </td>
+                                                    <td>
+                                                        0.0.0.0/0
+                                                    </td>
+                                                    <td>
+                                                        all
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <select class="create-footer-select create-title-wrap">
+                                        <option value="객체 만들기" class=>객체 만들기</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <input type="text" class="create-footer-input">
+                        </form>
+
+                        <div class="create-footer-btn-wrap col-group">
+                            <button class="create-footer-btn submit">
+                                저장
+                            </button>
+                            <button class="create-footer-btn">
+                                복사하기
+                            </button>
+                            <label for="check_footer" class="check-label">
+                                <input type="checkbox" class="check-input" id="check_footer">
+                                <div class="check-item col-group">
+                                    <i class="xi-check"></i>
+                                    영향받는 IPv4 정책 확인
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

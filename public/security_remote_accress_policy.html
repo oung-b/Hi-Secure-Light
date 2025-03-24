@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Quick Function
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Security Control
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                             Remote Access
+                        </div>
+                    </div>
+                    <div class="dashboard-menu-group col-group">
+                        <a href="security_remote_accress_policy.html" class="dashboard-menu-item active">
+                            Remote Access Policy
+                        </a>
+                        <a href="security_remote_accress_manage.html" class="dashboard-menu-item">
+                            Remote Access Manage
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            Remote Access Policy List
+                        </div>
+                
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Maintenance #1
+                                    </div>
+                                    <div class="form-list col-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Source IP
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Purpose
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Disable/Enable
+                                            </p>
+                                            <label for="switch_1" class="switch-wrap">
+                                                <input type="checkbox" id="switch_1">
+                                                <div class="switch-icon">
+                                                    <div class="switch-core"></div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Maintenance #2
+                                    </div>
+                                    <div class="form-list col-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Source IP
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Purpose
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Disable/Enable
+                                            </p>
+                                            <label for="switch_2" class="switch-wrap">
+                                                <input type="checkbox" id="switch_2">
+                                                <div class="switch-icon">
+                                                    <div class="switch-core"></div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Maintenance #3
+                                    </div>
+                                    <div class="form-list col-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Source IP
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Purpose
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Disable/Enable
+                                            </p>
+                                            <label for="switch_3" class="switch-wrap">
+                                                <input type="checkbox" id="switch_3">
+                                                <div class="switch-icon">
+                                                    <div class="switch-core"></div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+    
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

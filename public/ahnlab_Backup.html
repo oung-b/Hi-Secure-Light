@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Firewall
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            System
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Backup & Restore
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Backdup System
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap wide">
+                        <div class="dashboard-form-title">
+                            Backup
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-item row-group">
+                                    <label for="check_1" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_1">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            Use local backup
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Backup file password
+                                    </p>
+                                    <input type="password" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        Backup Schedule
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="item-user row-group">
+                                        <select name="" id="" class="form-select"></select>
+                                        <select name="" id="" class="form-select"></select>
+                                        <select name="" id="" class="form-select"></select>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        Storage days
+                                    </p>
+                                    <div class="form-input-wrap">
+                                        <input type="password" class="form-input">
+                                        <span class="sticker">day</span>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        <label for="check_2" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_2">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                Use remote backup (Max 20)
+                                            </div>
+                                        </label>
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="subpage-table-wrap">
+                                        <table class="subpage-table">
+                                            <thead>
+                                                <th>
+                                                    IP Addess
+                                                </th>
+                                                <th>
+                                                    Port
+                                                </th>
+                                                <th>
+                                                    Transmission method
+                                                </th>
+                                                <th>
+                                                    account
+                                                </th>
+                                                <th>
+                                                    Backup path
+                                                </th>
+                                                <th>
+                                                    Backup schedule
+                                                </th>
+                                                <th>
+                                                    Last backup time
+                                                </th>
+                                                <th>
+                                                    Description
+                                                </th>
+                                                <th>
+                                                    Run backup
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="9">
+                                                        <p class="null-txt">
+                                                            null
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        Backup contents (Max 20)
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="subpage-table-wrap">
+                                        <table class="subpage-table">
+                                            <thead>
+                                                <th>
+                                                    Backup time
+                                                </th>
+                                                <th>
+                                                    Backup location
+                                                </th>
+                                                <th>
+                                                    Backup method
+                                                </th>
+                                                <th>
+                                                    File name
+                                                </th>
+                                                <th>
+                                                    IP Addess
+                                                </th>
+                                                <th>
+                                                    Transmission method
+                                                </th>
+                                                <th>
+                                                    Port
+                                                </th>
+                                                <th>
+                                                    account
+                                                </th>
+                                                <th>
+                                                    Backup Path
+                                                </th>
+                                                <th>
+                                                    Download
+                                                </th>
+                                                <th>
+                                                    Restore
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="11">
+                                                        <p class="null-txt">
+                                                            null
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="form-download-btn-wrap col-group">
+                                        <a href="" class="form-download-btn" download="">
+                                            Download current settings
+                                        </a>
+                                        <a href="" class="form-download-btn" download="">
+                                            Download analysis request form
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                Save
+                            </button>
+                            <button class="dashboard-form-btn black">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

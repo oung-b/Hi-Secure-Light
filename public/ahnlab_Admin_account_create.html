@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Firewall
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            System
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Administrator
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Account Management
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            관리자 계정 추가
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        아이디
+                                    </p>
+                                    <input type="text" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        비밀번호
+                                    </p>
+                                    <input type="password" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        비밀번호 확인
+                                    </p>
+                                    <input type="password" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <p class="item-title">
+                                        비밀번호 변경 주기
+                                    </p>
+                                    <div class="form-input-wrap">
+                                        <input type="number" class="form-input">
+                                        <span class="sticker">일</span>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        로그인 허용 IPv4 주소 (Max 20)
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="item-user row-group">
+                                        <input type="text" class="form-input">
+                                        <input type="text" class="form-input">
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        로그인 허용 IPv6 주소 (Max 20)
+                                        <button class="add-btn">
+                                            <i class="xi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="item-user row-group">
+                                        <input type="text" class="form-input">
+                                        <input type="text" class="form-input">
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        외부인증
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                사용
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <select name="" id="" class="form-select">
+                                        <option value="인증 서버 선택">인증 서버 선택</option>
+                                    </select>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        외부인증
+                                    </div>
+                                    <div class="item-user col-group">
+                                        <label for="check_2_1" class="check-label">
+                                            <input type="radio" class="check-input" name="check_2" id="check_2_1">
+                                            <div class="check-item radio-item col-group">
+                                                <i class="xi-check"></i>
+                                                읽기 관리자
+                                            </div>
+                                        </label>
+                                        <label for="check_2_2" class="check-label">
+                                            <input type="radio" class="check-input" name="check_2" id="check_2_2">
+                                            <div class="check-item radio-item col-group">
+                                                <i class="xi-check"></i>
+                                                시스템 관리자
+                                            </div>
+                                        </label>
+                                        <label for="check_2_3" class="check-label">
+                                            <input type="radio" class="check-input" name="check_2" id="check_2_3">
+                                            <div class="check-item radio-item col-group">
+                                                <i class="xi-check"></i>
+                                                정책 관리자
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <select name="" id="" class="form-select">
+                                        <option value="정책 관리자 권한 선택">정책 관리자 권한 선택</option>
+                                    </select>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        계정 만료일
+                                        <label for="check_3" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_3">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                사용
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <input type="date" class="form-input">
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        휴면 계정
+                                        <label for="check_4" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_4">
+                                            <div class="check-item col-group">
+                                                <i class="xi-check"></i>
+                                                사용
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-input-wrap">
+                                        <input type="number" class="form-input">
+                                        <span class="sticker">일</span>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title">
+                                        연속 로그인 실패 허용 횟수
+                                    </div>
+                                    <div class="form-input-wrap">
+                                        <input type="number" class="form-input">
+                                        <span class="sticker">회</span>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        로그인 실패 처리방법
+                                    </div>
+                                    <div class="item-user col-group">
+                                        <label for="check_5_1" class="check-label">
+                                            <input type="radio" class="check-input" name="check_5" id="check_5_1">
+                                            <div class="check-item radio-item col-group">
+                                                <i class="xi-check"></i>
+                                                계정 잠금
+                                            </div>
+                                        </label>
+                                        <label for="check_5_2" class="check-label">
+                                            <input type="radio" class="check-input" name="check_5" id="check_5_2">
+                                            <div class="check-item radio-item col-group">
+                                                <i class="xi-check"></i>
+                                                영구 잠금
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-input-wrap">
+                                        <input type="number" class="form-input">
+                                        <span class="sticker">분</span>
+                                    </div>
+                                </div>
+                                <div class="form-item row-group">
+                                    <div class="item-title col-group">
+                                        메일 주소
+                                    </div>
+                                    <input type="email" class="form-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                저장
+                            </button>
+                            <button class="dashboard-form-btn black">
+                                복사하기
+                            </button>
+                            <label for="check_footer" class="check-label">
+                                <input type="checkbox" class="check-input" id="check_footer">
+                                <div class="check-item col-group">
+                                    <i class="xi-check"></i>
+                                    입력값 유지
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

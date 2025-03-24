@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Firewall
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            System
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Alert
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Alert Method
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            Notification method
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Alarm method/event level
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item col-group">
+                                            <div class="item-title">
+                                                <label for="check_1_1" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_1_1">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        Mail
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="item-user">
+                                                <select name="" id="" class="form-select">
+                                                    <option value="Warning">Warning</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-item col-group">
+                                            <div class="item-title">
+                                                <label for="check_1_2" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_1_2">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        SMS
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="item-user">
+                                                <select name="" id="" class="form-select">
+                                                    <option value="Warning">Warning</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-item col-group">
+                                            <div class="item-title">
+                                                <label for="check_1_3" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_1_3">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        Pop-up
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="item-user">
+                                                <select name="" id="" class="form-select">
+                                                    <option value="Warning">Warning</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-item col-group">
+                                            <div class="item-title">
+                                                <label for="check_1_4" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_1_4">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        SNMP Trap
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="item-user">
+                                                <select name="" id="" class="form-select">
+                                                    <option value="Warning">Warning</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Mail settings
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item row-group">
+                                            <label for="check_2_1" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_2_1">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Recipient email address
+                                                </div>
+                                            </label>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <label for="check_2_1" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_2_1">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Select administrator account (Max 3)
+                                                </div>
+                                            </label>
+                                            <select name="" id="" class="form-select">
+                                                <option value="Select from list">Select from list</option>
+                                            </select>
+                                            <input type="text" class="form-input" value="Administrator account 1" readonly>
+                                            <input type="text" class="form-input" value="Administrator account 2" readonly>
+                                            <input type="text" class="form-input" value="Administrator account 3" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title col-group">
+                                        Mail Server
+                                        <button class="form-title-btn">
+                                            Mail Test
+                                        </button>
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-list col-group">
+                                            <div class="form-item row-group">
+                                                <div class="item-title">
+                                                    IP Addess
+                                                </div>
+                                                <input type="text" class="form-input" placeholder="IPv4">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <div class="item-title">
+                                                    Port
+                                                </div>
+                                                <input type="text" class="form-input" value="22">
+                                            </div>
+                                        </div>
+                                        <div class="form-list col-group">
+                                            <div class="form-item row-group">
+                                                <div class="item-title">
+                                                    Account
+                                                </div>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <div class="item-title">
+                                                    Password
+                                                </div>
+                                                <input type="password" class="form-input">
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <div class="item-title">
+                                                Specify origin address
+                                            </div>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title col-group">
+                                        SMS Setting
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item row-group">
+                                            <div class="item-title">
+                                                Sender phone number
+                                            </div>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <div class="item-title">
+                                                Recipient phone number (Max 3)
+                                            </div>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title col-group">
+                                        SMS Server
+                                        <button class="form-title-btn">
+                                            SMS Test
+                                        </button>
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item row-group">
+                                            <div class="item-title">
+                                                Port
+                                            </div>
+                                            <input type="text" class="form-input" value="22">
+                                        </div>
+                                        <div class="form-list col-group">
+                                            <div class="form-item row-group">
+                                                <div class="item-title">
+                                                    Account
+                                                </div>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <div class="item-title">
+                                                    Password
+                                                </div>
+                                                <input type="password" class="form-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

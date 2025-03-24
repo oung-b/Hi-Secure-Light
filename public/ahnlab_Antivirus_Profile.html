@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Firewall
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Policy
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Anti-Virus
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            AV Profiles
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subpage-table-container">
+                    <div class="subpage-table-edit-btn-wrap col-group">
+                        <button class="subpage-table-edit-btn">
+                            <i class="xi-plus blue"></i>
+                        </button>
+                        <button class="subpage-table-edit-btn">
+                            <i class="xi-pen"></i>
+                        </button>
+                        <button class="subpage-table-edit-btn">
+                            <i class="xi-close red"></i>
+                        </button>
+                    </div>
+                    <div class="subpage-table-search-wrap col-group">
+                        <form action="">
+                            <input type="text" class="subpage-table-search-input">
+                        </form>
+                        <button type="submit" class="subpage-table-btn">
+                            Search
+                        </button>
+                    </div>
+
+                    <div class="subpage-table-wrap">
+                        <table class="report-table">
+                            <colgroup>
+                                <col width="36px">
+                            </colgroup>
+                            <thead>
+                                <th>
+                                    <label for="check_all" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_all">
+                                        <div class="check-item">
+                                            <i class="xi-check"></i>
+                                        </div>
+                                    </label>
+                                </th>
+                                <th>
+                                    Enable/Disable
+                                </th>
+                                <th>
+                                    Mail
+                                </th>
+                                <th>
+                                    WEB Site
+                                </th>
+                                <th>
+                                    FTP
+                                </th>
+                                <th>
+                                    ASD Cloud Blocking
+                                </th>
+                                <th>
+                                    Compressed file inspection
+                                </th>
+                                <th>
+                                    Maximum number of compressions
+                                </th>
+                                <th>
+                                    Profile
+                                </th>
+                            </thead>
+                            <tbody>
+<!--                                <tr>
+                                    <td colspan="100">
+                                        <p class="null-txt">
+                                            none
+                                        </p>
+                                    </td>
+                                </tr>-->
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">Enable</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        Unused
+                                    </td>
+                                    <td>
+                                        <span class="blue">Used</span>
+                                    </td>
+                                    <td>
+                                        Twice
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">Enable</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        Unused
+                                    </td>
+                                    <td>
+                                        <span class="blue">Used</span>
+                                    </td>
+                                    <td>
+                                        Twice
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">Enable</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        Unused
+                                    </td>
+                                    <td>
+                                        <span class="blue">Used</span>
+                                    </td>
+                                    <td>
+                                        Twice
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">Enable</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        Unused
+                                    </td>
+                                    <td>
+                                        <span class="blue">Used</span>
+                                    </td>
+                                    <td>
+                                        Twice
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">Enable</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        Unused
+                                    </td>
+                                    <td>
+                                        <span class="blue">Used</span>
+                                    </td>
+                                    <td>
+                                        Twice
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="check_1" class="check-label">
+                                            <input type="checkbox" class="check-input" id="check_1">
+                                            <div class="check-item">
+                                                <i class="xi-check"></i>
+                                            </div>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <span class="blue">Enable</span>
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        default
+                                    </td>
+                                    <td>
+                                        Unused
+                                    </td>
+                                    <td>
+                                        <span class="blue">Used</span>
+                                    </td>
+                                    <td>
+                                        Twice
+                                    </td>
+                                    <td>
+                                        default profile
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+
+        <!-- 수정 모달 -->
+        <div class="modal-container policy-add-wrap" style="display: none;">
+            <div class="modal-wrap">
+                <div class="modal-title">
+                    안티 바이러스 프로파일 수정
+                    <i class="xi-close close-btn"></i>
+                </div>
+
+                <form action="">
+                    <div class="dashboard-form row-group">
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                이름
+                            </p>
+                            <div class="item-user">
+                                <input type="text" class="form-input" value="default">
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                메일
+                            </p>
+                            <div class="item-user">
+                                <select name="" id="" class="form-select">
+                                    <option value="default">default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                웹사이트
+                            </p>
+                            <div class="item-user">
+                                <select name="" id="" class="form-select">
+                                    <option value="default">default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                FTP
+                            </p>
+                            <div class="item-user">
+                                <select name="" id="" class="form-select">
+                                    <option value="default">default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item col-group">
+                            <p class="item-title">
+                                ASD 클라우드 진단
+                            </p>
+                            <div class="item-user">
+                                <label for="check_1" class="check-label">
+                                    <input type="checkbox" class="check-input" id="check_1">
+                                    <div class="check-item col-group">
+                                        <i class="xi-check"></i>
+                                        Enable
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-list col-group">
+                            <div class="form-item col-group">
+                                <p class="item-title">
+                                    압축 파일 검사
+                                </p>
+                                <div class="item-user">
+                                    <label for="check_1" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_1">
+                                        <div class="check-item col-group">
+                                            <i class="xi-check"></i>
+                                            Enable
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-item col-group">
+                                <p class="item-title">
+                                    최대 압축 횟수
+                                </p>
+                                <div class="item-user form-input-wrap">
+                                    <input type="number" class="form-input">
+                                    <span class="sticker">번</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn">
+                        저장
+                    </button>
+                    <button class="dashboard-form-btn black">
+                        복사하기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- //수정 모달 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

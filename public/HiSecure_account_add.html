@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
+
+                <div class="dashboard-detail-title-wrap col-group">
+                    <button onclick="history.back();" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </button>
+                    <h2 class="dashboard-detail-title">
+                        Hi-Secure Account Add
+                    </h2>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="account-wrap">
+                        <div class="modify-group col-group">
+                            <div>
+                                <form action="">
+                                    <div class="account-form row-group"> 
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                ID
+                                            </p>
+                                            <div class="item-user form-user-btn-wrap col-group">
+                                                <input type="text" class="form-input">
+                                                <button class="form-user-btn">
+                                                    Duplicate Check
+                                                </button>
+                                            </div>
+                                            <p class="error-txt validation-txt" id="validation-ids">
+                                                <i class="xi-error"></i>
+                                                ID must be less than 10 characters and must not use special characters.
+                                            </p>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                User Name
+                                            </p>
+                                            <div class="item-user col-group">
+                                                <input type="text" class="form-input">
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Password
+                                            </p>
+                                            <input type="password" class="form-input" id="password">
+                                            <p class="sub-txt">
+                                                Password must be at least 8 characters long, <br>
+                                                must contain letters in mixed case and must contain numbers.
+                                            </p>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Confirm Password
+                                            </p>
+                                            <input type="password" class="form-input" id="password_confirmation">
+                                            <p class="error-txt validation-txt" id="validation-ids">
+                                                <i class="xi-error"></i>
+                                                Those passwords didn’t match. Try again.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="">
+                                    <div class="account-form row-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Group
+                                            </p>
+                                            <select class="form-select" id="group">
+                                                <option value="1">1</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Authority
+                                            </p>
+                                            <select class="form-select" id="authority">
+                                                <option value="1">1</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                E-Mail
+                                            </p>
+                                            <input type="email" class="form-input" id="email">
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Period of use
+                                            </p>
+                                            <input type="text" class="form-input form-date" id="periodofuse">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="form-btn-wrap col-group">
+                            <button class="form-btn" onclick="update()">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<!-- alert 팝업 -->
+<div class="modal-container modal-alert" style="display: none;">
+    <div class="modal-wrap modal-alert-wrap">
+
+        <div class="modal-alert-title-wrap">
+            <i class="xi-check-circle icon"></i>
+            <p class="modal-alert-title">
+                Account creation has been completed.
+            </p>
+        </div>
+
+        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn cancel-btn">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+    $('#periodofuse').datepicker();
+</script>
+</html>

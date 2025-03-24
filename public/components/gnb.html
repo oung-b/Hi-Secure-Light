@@ -1,0 +1,1395 @@
+<div class="dashboard-gnb">
+
+    <div class="header-utc-wrap col-group">
+        <p class="utc">
+            UTC
+        </p>
+        <p class="utc-txt">
+            23.09.18 17:53
+        </p>
+    </div>
+
+    <div class="dashboard-gnb-container row-group">
+
+        <div class="dashboard-gnb-wrap">
+            <p class="dashboard-gnb-title">
+                Status
+            </p>
+
+            <div class="dashboard-standard-wrap col-group">
+                <div class="dashboard-standard-item up row-group m-script-pop" data-target=".modal-devices-up">
+                    <div class="num">
+                        0
+                    </div>
+                    <div class="txt">
+                        Devices UP
+                    </div>
+                </div>
+                <div class="dashboard-standard-item down row-group m-script-pop" data-target=".modal-devices-down">
+                    <div class="num">
+                        0
+                    </div>
+                    <div class="txt">
+                        Devices Down
+                    </div>
+                </div>
+                <div class="dashboard-standard-item warning row-group m-script-pop"
+                    data-target=".modal-devices-warning">
+                    <div class="num">
+                        0
+                    </div>
+                    <div class="txt">
+                        Warning
+                    </div>
+                </div>
+                <div class="dashboard-standard-item critical row-group m-script-pop"
+                    data-target=".modal-devices-critical">
+                    <div class="num">
+                        0
+                    </div>
+                    <div class="txt">
+                        Unusual
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-gnb-wrap">
+            <div class="real-time-traffic-title-wrap">
+                <p class="title">
+                    Traffic
+                </p>
+                <p class="mbps">
+                    45.6Mbps
+                </p>
+                <div class="top1-wrap">
+                    <div class="txt-group">
+                        <div class="type">FW1</div>
+                        <p class="ip">192.168.0.176</p>
+                    </div>
+                    <p class="txt">TOP 1</p>
+                </div>
+            </div>
+            <div class="real-time-traffic-wrap">
+                <canvas id="chart"></canvas>
+                <p class="y-text">
+                    (Y: Mbps)
+                </p>
+            </div>
+        </div>
+
+        <div class="dashboard-gnb-wrap">
+            <p class="dashboard-gnb-title">
+                Traffic Top 10
+                <span class="time">
+                    Last 24 Hours
+                </span>
+            </p>
+            <div class="traffic-top-wrap">
+                <div class="traffic-top-item">
+                    <div class="num">1</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">2</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">3</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">4</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">5</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">6</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">7</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">8</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">9</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+                <div class="traffic-top-item">
+                    <div class="num">10</div>
+                    <div class="txt-wrap">
+                        <div class="txt-group">
+                            <p class="name">
+                                OWS11
+                            </p>
+                            <p class="ip">
+                                192.168.0.176
+                            </p>
+                        </div>
+                        <p class="byte">
+                            11.2Mbps
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </p>
+        </div>
+        <div class="dashboard-gnb-wrap">
+            <div class="dashboard-gnb-tab-wrap">
+                <div class="dashboard-gnb-tab-list">
+                    <div class="dashboard-gnb-tab active" data-tab="tab_01">
+                        IPS
+                    </div>
+                    <div class="dashboard-gnb-tab" data-tab="tab_02">
+                        Anti-Virus
+                    </div>
+                    <div class="dashboard-gnb-tab" data-tab="tab_03">
+                        C&C Detection
+                    </div>
+                </div>
+                <!-- <button class="more-btn">
+                    <i class="xi-ellipsis-v"></i>
+                </button> -->
+            </div>
+
+            <div class="polar-area-chart active" id="tab_01">
+                <div class="time">
+                    Last 10 mins
+                </div>
+                <canvas id="polar_area_chart_01"></canvas>
+            </div>
+            <div class="polar-area-chart" id="tab_02">
+                <div class="time">
+                    Last 10 mins
+                </div>
+                <canvas id="polar_area_chart_02"></canvas>
+            </div>
+            <div class="polar-area-chart" id="tab_03">
+                <div class="time">
+                    Last 10 mins
+                </div>
+                <canvas id="polar_area_chart_03"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="gnb-container" id="mainmenu_gnb">
+    <div class="header-utc-wrap col-group">
+        <p class="utc">
+            UTC
+        </p>
+        <p class="utc-txt">
+            23.09.18 17:53
+        </p>
+    </div>
+
+    <div class="gnb-wrap row-group active">
+        <div class="gnb-title col-group">
+            <img src="images/icon_mainmenu.png" alt="" class="icon">
+            MAIN MENU
+        </div>
+        <div class="gnb-menu-list row-group">
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Firewall
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Policy
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <div class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    Policy
+                                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                                </div>
+
+                                <div class="sub-gnb-menu-list row-group">
+                                    <a href="ahnlab_IPv4.html" class="sub-gnb-menu">
+                                        <div class="sub-gnb-menu-title col-group">
+                                            IPv4 Policy
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    NAT
+                                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                                </div>
+
+                                <div class="sub-gnb-menu-list row-group">
+                                    <a href="ahnlab_IBNAT.html" class="sub-gnb-menu">
+                                        <div class="sub-gnb-menu-title col-group">
+                                            NAT Policy
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    NAC
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Management
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <a href="nac_management_node.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    Node
+                                </div>
+                            </a>
+                            <a href="nac_management_ip_address.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    IP Address
+                                </div>
+                            </a>
+                            <a href="nac_management_wlan.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    WLAN
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Log
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <a href="nac_log_log.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    Log
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            System
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <a href="nac_system_license.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    License
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    NMS
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Devices
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <a href="nms_devices_all.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    All
+                                </div>
+                            </a>
+                            <a href="nms_devices_favorite.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    Favorite Devices
+                                </div>
+                            </a>
+                            <a href="nms_devices_dependencies.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    Dependencies
+                                </div>
+                            </a>
+                            <!-- <div class="sub-gnb-menu">
+                                <a href="nms_devices_add.html" class="sub-gnb-menu-title col-group">
+                                    Add Device
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Sensors
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+
+                            <div class="sub-gnb-menu">
+                                <a href="nms_sensors_all.html" class="sub-gnb-menu-title col-group">
+                                    All
+                                </a>
+                            </div>
+
+                            <div class="sub-gnb-menu">
+                                <a href="nms_sensors_addsensor.html" class="sub-gnb-menu-title col-group">
+                                    Add Sensors
+                                </a>
+                            </div>
+
+                            <div class="sub-gnb-menu">
+                                <a href="nms_sensors_favorite.html" class="sub-gnb-menu-title col-group">
+                                    Favorite Sensors
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Alarms
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <div class="sub-gnb-menu">
+                                <a href="nms_alarms_all.html" class="sub-gnb-menu-title col-group">
+                                    All
+                                </a>
+                            </div>
+                            <div class="sub-gnb-menu">
+                                <a href="nms_alarms_errors.html" class="sub-gnb-menu-title col-group">
+                                    Errors Only
+                                </a>
+                            </div>
+                            <div class="sub-gnb-menu">
+                                <a href="nms_alarms_warning.html" class="sub-gnb-menu-title col-group">
+                                    Warnings Only
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Maps
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <div class="sub-gnb-menu">
+                                <a href="nms_maps_all.html" class="sub-gnb-menu-title col-group">
+                                    All
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+ -->
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Reports
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <a href="nms_reports_all.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    All
+                                </div>
+                            </a>
+                            <!-- <div class="sub-gnb-menu">
+                                <a href="nms_reports_add.html" class="sub-gnb-menu-title col-group">
+                                    Add Report
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Logs
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <a href="nms_logs_all.html" class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    All
+                                </div>
+                            </a>
+                            <!--
+                            <div class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    Status Changes
+                                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                                </div>
+                                <div class="sub-gnb-menu-list row-group">
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_status_updown.html" class="sub-gnb-menu-title col-group">
+                                            Up & Down
+                                        </a>
+                                    </div>
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_status_down.html" class="sub-gnb-menu-title col-group">
+                                            Down
+                                        </a>
+                                    </div>
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_status_warning.html" class="sub-gnb-menu-title col-group">
+                                            Warning
+                                        </a>
+                                    </div>
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_status_unusual.html" class="sub-gnb-menu-title col-group">
+                                            Unusual
+                                        </a>
+                                    </div>
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_status_up.html" class="sub-gnb-menu-title col-group">
+                                            UP
+                                        </a>
+                                    </div>
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_status_paused.html" class="sub-gnb-menu-title col-group">
+                                            Paused/Resumed
+                                        </a>
+                                    </div>
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_status_alarms.html" class="sub-gnb-menu-title col-group">
+                                            Acknowledged Alarms
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-gnb-menu">
+                                <div class="sub-gnb-menu-title col-group">
+                                    System Events
+                                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                                </div>
+                                <div class="sub-gnb-menu-list row-group">
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_system_probe.html" class="sub-gnb-menu-title col-group">
+                                            Probe Related
+                                        </a>
+                                    </div>
+                                    <div class="sub-gnb-menu">
+                                        <a href="nms_logs_system_message.html" class="sub-gnb-menu-title col-group">
+                                            Status Message Related
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Setup
+                            <i class="xi-angle-down-min icon toggle-icon"></i>
+                        </div>
+
+                        <div class="sub-gnb-menu-list row-group">
+                            <div class="sub-gnb-menu">
+                                <a href="nms_setup_prtg.html" class="sub-gnb-menu-title col-group">
+                                    PRTG Status
+                                </a>
+                            </div>
+                            <div class="sub-gnb-menu">
+                                <a href="nms_setup_license.html" class="sub-gnb-menu-title col-group">
+                                    License Information
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <a href="/log_index.html" class="gnb-menu-title col-group">
+                    Log
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="gnb-container" id="quickfunction_gnb">
+    <div class="header-utc-wrap col-group">
+        <p class="utc">
+            UTC
+        </p>
+        <p class="utc-txt">
+            23.09.18 17:53
+        </p>
+    </div>
+
+    <div class="gnb-wrap row-group active">
+        <div class="gnb-title col-group">
+            <img src="images/icon_quickfunction.png" alt="" class="icon">
+            Quick Function
+        </div>
+        <div class="gnb-menu-list row-group">
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Security Control
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group allowed-devices">
+                            Allowed Devices
+                            <span class="badge">0</span>
+                        </div>
+                    </div>
+                    <div class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group blocked-devices">
+                            Blocked Devices
+                            <span class="badge">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Policy Control
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="policy_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#1 (Remote Zone)
+                        </div>
+                    </a>
+                    <a href="policy_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#2 (Navigation Zone)
+                        </div>
+                    </a>
+                    <a href="policy_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#3 (Communication Zone)                            
+                        </div>
+                    </a>
+                    <a href="policy_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#4 (Crew LAN Zone)                            
+                        </div>
+                    </a>
+                    <a href="policy_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#5 (Power Zone)                            
+                        </div>
+                    </a>
+                    <a href="policy_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#6
+                            (Control &
+                            Instrumentation Zone)                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Interface Control
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="interface_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#1 (Remote Zone)
+                        </div>
+                    </a>
+                    <a href="interface_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#2 (Navigation Zone)
+                        </div>
+                    </a>
+                    <a href="interface_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#3 (Communication Zone)                            
+                        </div>
+                    </a>
+                    <a href="interface_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#4 (Crew LAN Zone)                            
+                        </div>
+                    </a>
+                    <a href="interface_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#5 (Power Zone)                            
+                        </div>
+                    </a>
+                    <a href="interface_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title">
+                            FW#6
+                            (Control &
+                            Instrumentation Zone)                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="gnb-container" id="information_gnb">
+    <div class="header-utc-wrap col-group">
+        <p class="utc">
+            UTC
+        </p>
+        <p class="utc-txt">
+            23.09.18 17:53
+        </p>
+    </div>
+
+    <div class="gnb-wrap row-group active">
+        <div class="gnb-title col-group">
+            <img src="images/icon_information.png" alt="" class="icon">
+            Information for the Ship System
+        </div>
+        <div class="gnb-menu-list row-group">
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Identify
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="identify_hardware.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Hardware
+                        </div>
+                    </a>
+                    <a href="identify_software.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Software
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Protect
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="protect_safeguard.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            SafeGuard
+                        </div>
+                    </a>
+                    <a href="protect_security_zone.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Security Zone
+                        </div>
+                    </a>
+                    <a href="protect_access_control.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Access Control
+                        </div>
+                    </a>
+                    <!-- <a href="protect_wireleess.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Wireless
+                        </div>
+                    </a> -->
+                    <!-- <a href="protect_mobile_portable.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Mobile and Portable
+                        </div>
+                    </a> -->
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Detect
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+            </div>
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Response
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="response_plan.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Incident response plan
+                        </div>
+                    </a>
+                    <a href="response_manual.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Manual operation
+                        </div>
+                    </a>
+                    <a href="response_network.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Network Isolation
+                        </div>
+                    </a>
+                    <a href="response_risk.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Minimal risk condition
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gnb-menu">
+                <div class="gnb-menu-title col-group">
+                    Recover
+                    <i class="xi-angle-down-min icon toggle-icon"></i>
+                </div>
+                <div class="sub-gnb-menu-list row-group">
+                    <a href="recover_plan.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Recovery Plan
+                        </div>
+                    </a>
+                    <a href="recover_backup.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Backup and restore capability
+                        </div>
+                    </a>
+                    <a href="recover_shutdown.html" class="sub-gnb-menu">
+                        <div class="sub-gnb-menu-title col-group">
+                            Shutdown, Reset, Roll-Back, Restart
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Allowed Devices -->
+<div class="modal-container allowed-devices-wrap" style="display: none;">
+    <div class="modal-wrap">
+        <div class="modal-title">
+            Allowed devices
+            <i class="xi-close close-btn"></i>
+        </div>
+
+        <div class="modal-table-container">
+            <div class="modal-table-wrap account-table-wrap">
+                <table>
+                    <colgroup>
+                        <col width="98px">
+                        <col width="170px">
+                        <col width="150px">
+                        <col width="170px">
+                        <col width="64px">
+                    </colgroup>
+                    <thead>
+                        <th>
+                            host
+                        </th>
+                        <th>
+                            IP
+                        </th>
+                        <th>
+                            Device
+                        </th>
+                        <th>
+                            MAC
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                eth0
+                            </td>
+                            <td>
+                                000.000.000.000
+                            </td>
+                            <td>
+                                Lorem ipsum dolor
+                            </td>
+                            <td>
+                                00:90:0B:CA:FC:A8
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                <button class="m-btn type01 red" data-value="all">REMOVE</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn">
+                Blocked
+            </button>
+        </div>-->
+    </div>
+</div>
+
+<!-- blocked Devices -->
+<div class="modal-container blocked-devices-wrap" style="display: none;">
+    <div class="modal-wrap">
+        <div class="modal-title">
+            Blocked devices
+            <i class="xi-close close-btn"></i>
+        </div>
+
+        <div class="modal-table-container">
+            <div class="modal-table-wrap account-table-wrap">
+                <table>
+                    <colgroup>
+                        <col width="98px">
+                        <col width="170px">
+                        <col width="150px">
+                        <col width="170px">
+                        <col width="64px">
+                    </colgroup>
+                    <thead>
+                        <th>
+                            host
+                        </th>
+                        <th>
+                            IP
+                        </th>
+                        <th>
+                            Device
+                        </th>
+                        <th>
+                            MAC
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th></th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--        <div class="dashboard-form-btn-wrap col-group">
+            <button class="dashboard-form-btn">
+                Allow
+            </button>
+        </div>-->
+    </div>
+</div>
+
+<!-- /////모달///// -->
+
+<script>
+    let chart = null;
+
+    const main_ctx = document.getElementById('chart');
+
+    new Chart(main_ctx, {
+        type: 'line',
+        data: {
+            labels: ['18:05', '18:15', '18:25', '18:35', '18:45', '18:55'],
+            datasets: [
+                {
+                    label: 'FW#1',
+                    data: [52, 58, 56, 35, 61, 67],
+                    borderWidth: 2,
+                    borderColor: '#502ecf',
+                    tension: 0.4 //곡선그래프
+                },
+                {
+                    label: 'FW#2',
+                    data: [0, 22, 24, 28, 43, 2],
+                    borderWidth: 2,
+                    borderColor: '#359832',
+                    tension: 0.4 //곡선그래프
+                },
+                {
+                    label: 'FW#3',
+                    data: [2, 30, 40, 25, 24, 5],
+                    borderWidth: 2,
+                    borderColor: '#ef9900',
+                    tension: 0.4 //곡선그래프
+                },
+                {
+                    label: 'FW#4',
+                    data: [9, 10, 45, 25, 48, 22],
+                    borderWidth: 2,
+                    borderColor: '#4ec8ee',
+                    tension: 0.4 //곡선그래프
+                },
+                {
+                    label: 'FW#5',
+                    data: [60, 24, 48, 43, 28, 3],
+                    borderWidth: 2,
+                    borderColor: '#983298',
+                    tension: 0.4 //곡선그래프
+                },
+                {
+                    label: 'FW#6',
+                    data: [0, 59, 42, 43, 43, 2],
+                    borderWidth: 1,
+                    borderColor: '#ff4620',
+                    tension: 0.4 //곡선그래프
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    ticks: {
+                        stepSize: 20, //y축 단위
+                        font: function () {
+                            return {
+                                size: 10,
+                                family: 'Pretendard'
+                            }
+                        },
+                    },
+                },
+                x: {
+                    ticks: {
+                        font: function () {
+                            return {
+                                size: 10,
+                                family: 'Pretendard'
+                            }
+                        },
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: function () {
+                            return {
+                                size: 9,
+                                family: 'Pretendard'
+                            }
+                        },
+                        boxWidth: 3,
+                        boxHeight: 3,
+                    },
+                    position: 'top',
+                    fullWidth: false,
+                },
+            },
+            elements: {
+                point: {
+                    radius: 0, //선형 그래프 포인트 삭제
+                },
+            },
+        },
+    });
+
+    // 중메뉴 타이틀(gnb-menu-title)누르면 중메뉴(gnb-menu) 열림(active 추가)
+    // (누른 메뉴 제외하고 다른 메뉴 닫힘)
+    const gnbMenuTitles = document.querySelectorAll('.gnb-menu-title');
+
+    gnbMenuTitles.forEach((gnbMenuTitle) => {
+        gnbMenuTitle.addEventListener('click', function () {
+            const gnbWrap = this.parentElement;
+
+            document.querySelectorAll('.gnb-menu').forEach((wrap) => {
+                if (wrap !== gnbWrap) {
+                    wrap.classList.remove('active');
+                }
+            });
+
+            if (gnbWrap.classList.contains('dashboard_href')) {
+                document.querySelector('.subpage').classList.add('active');
+            }
+
+            gnbWrap.classList.toggle('active');
+        });
+    });
+
+    // 소메뉴 타이틀(sub-gnb-menu-title)누르면 중메뉴(sub-gnb-menu) 열림(active 추가)
+    // (누른 메뉴 제외하고 다른 메뉴 닫힘)
+    const subGnbMenuTitles = document.querySelectorAll('.sub-gnb-menu-title');
+
+    subGnbMenuTitles.forEach((subGnbMenuTitle) => {
+        subGnbMenuTitle.addEventListener('click', function () {
+
+            const subGnbMenu = this.parentElement;
+
+            subGnbMenu.classList.toggle('active');
+
+            const subGnbMenuList = subGnbMenu.querySelector('.sub-gnb-menu-list');
+            if (subGnbMenuList) {
+                subGnbMenuList.style.display = subGnbMenu.classList.contains('active') ? 'block' : 'none';
+            }
+
+            const siblings = subGnbMenu.parentElement.querySelectorAll('.sub-gnb-menu');
+            siblings.forEach((sibling) => {
+                if (sibling !== subGnbMenu) {
+                    sibling.classList.remove('active');
+
+                    const siblingList = sibling.querySelector('.sub-gnb-menu-list');
+                    if (siblingList) {
+                        siblingList.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
+
+    //polar-area-chart tab
+    $('.dashboard-gnb-tab').click(function () {
+        $('.dashboard-gnb-tab').removeClass('active');
+        $(this).addClass('active');
+
+        var data_tab = $(this).attr('data-tab');
+
+        $('.polar-area-chart').hide();
+        $('.polar-area-chart#' + data_tab).fadeIn(300);
+    });
+
+    //polar-area-chart
+    const polarChart = document.getElementById('polar_area_chart_01');
+
+    function truncateAndAppend(strings, maxLength = 10) {
+        const truncatedStrings = [];
+        const originalTitles = []; // 원래의 타이틀을 유지할 배열
+        for (let string of strings) {
+            if (string.length > maxLength) {
+                truncatedStrings.push(string.slice(0, maxLength) + "...");
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
+            } else {
+                truncatedStrings.push(string);
+                originalTitles.push(string); // 원래의 타이틀을 originalTitles에 추가
+            }
+        }
+        return { truncatedStrings, originalTitles }; // 수정된 타이틀과 원래의 타이틀을 반환
+    }
+
+    const labels = ['quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule', 'quic', '51.com.access', 'apache http server', 'acme mini_httpd', 'emule'];
+
+    const { truncatedStrings, originalTitles } = truncateAndAppend(labels);
+
+    new Chart(polarChart, {
+        type: 'polarArea',
+        data: {
+            labels: truncatedStrings,
+            datasets: [
+                {
+                    label: ['Count'],
+                    data: [36844, 36369, 36227, 34222, 34001, 33883, 32119, 31985, 30452, 30122],
+                    backgroundColor: [
+                        '#E5211A',
+                        '#FF8800',
+                        '#FF9900',
+                        '#FFA900',
+                        '#FFB729',
+                        '#FEC34F',
+                        '#F9CC74',
+                        '#FFD787',
+                        '#FFE4AE',
+                        '#FFF3DC',
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 6
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                r: {
+                    pointLabels: {
+                        display: true,
+                        centerPointLabels: true,
+                        font: {
+                            size: 8,
+                            family: 'Pretendard'
+                        }
+                    },
+                    ticks: {
+                        display: false,
+                    }
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function (tooltipItem) {
+                            const index = tooltipItem[0].dataIndex; // 인덱스를 가져옵니다.
+                            return originalTitles[index]; // 툴팁의 타이틀에 원래의 타이틀을 표시
+                        },
+                        afterLabel: function (tooltipItem) {
+                            return 'Sip :' + '00.00-00.00'; // 툴팁의 라벨 뒤에 추가 문구를 반환합니다.
+                        },
+                    }
+                }
+            }
+        },
+    });
+
+
+
+</script>
+<script>
+    //모달 닫기//
+    $('.modal-container .close-btn').click(function () {
+        $(this).closest('.modal-container').fadeOut();
+    });
+
+    //모달 열기//
+    //Allowed Devices
+    $('.allowed-devices').click(function () {
+        $('.allowed-devices-wrap').fadeIn();
+    });
+
+    //Blocked Devices
+    $('.blocked-devices').click(function () {
+        $('.blocked-devices-wrap').fadeIn();
+    });
+
+    function getAllows() {
+        axios.get("/api/nac/allows")
+            .then(response => {
+                closeLoading();
+                let result = response.data.data;
+
+                let count = result.total;
+                let items = result.result;
+
+                $(".allowed-devices .badge").text(count);
+
+                $(".allowed-devices-wrap tbody").html("");
+
+                items.map(item => {
+                    $(".allowed-devices-wrap tbody").append(`<tr>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_PLATFORM}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">BLOCK</button></td>
+</tr>`)
+                });
+
+                $(".allowed-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
+                    let ip = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.post("/api/nac/blocks", {
+                        ip: ip
+                    }).then(response => {
+                        getAllows();
+                        getBlocks();
+                    });
+                });
+
+            })
+    }
+
+    function getBlocks() {
+        axios.get("/api/nac/blocks")
+            .then(response => {
+                closeLoading();
+                let result = response.data.data;
+
+                let count = result.total;
+                let items = result.result;
+
+                console.log(items);
+                $(".blocked-devices .badge").text(count);
+
+                $(".blocked-devices-wrap tbody").html("");
+
+                items.map(item => {
+                    $(".blocked-devices-wrap tbody").append(`<tr>
+<td>${item.NL_SIFNAME}</td>
+<td>${item.NL_IPSTR}</td>
+<td>${item.NL_PLATFORM}</td>
+<td>${item.NL_MAC}</td>
+<td><span class="state ${item.NL_STATUS == 0 ? 'green' : 'red'}"></span></td>
+<td><button class="m-btn type01" data-value="${item.NL_IPSTR}">ALLOW</button></td>
+</tr>`)
+                });
+
+                $(".blocked-devices-wrap tbody .m-btn").unbind("click").bind("click", function () {
+                    let ip = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.post("/api/nac/allows", {
+                        ip: ip
+                    }).then(response => {
+                        getAllows();
+                        getBlocks();
+                    });
+                });
+            })
+    }
+
+    getBlocks();
+
+    getAllows();
+</script>

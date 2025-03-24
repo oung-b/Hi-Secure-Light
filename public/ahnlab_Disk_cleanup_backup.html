@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- datepicker -->
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Firewall
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            System
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Log
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Disk Clearnup/Backup
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            Disk Cleanup/Backup
+                        </div>
+
+                        <form action="">
+                            <div class="dashboard-form row-group">
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Disk cleanup
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item row-group">
+                                            <label for="check_1_1" class="check-label">
+                                                <input type="radio" class="check-input" name="check_1" id="check_1_1">
+                                                <div class="check-item radio-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Based on disk usage
+                                                </div>
+                                            </label>
+                                            <div class="item-user col-group">
+                                                <input type="number" class="form-input w120"> When % is exceeded, the entire disk capacity is reduced.
+                                            </div>
+                                            <div class="item-user col-group">
+                                                <input type="number" class="form-input w120"> Leave % and delete
+                                            </div>
+                                            <label for="check_1_2" class="check-label">
+                                                <input type="radio" class="check-input" name="check_1" id="check_1_2">
+                                                <div class="check-item radio-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Based on data creation date
+                                                </div>
+                                            </label>
+                                            <div class="item-user col-group">
+                                                <input type="number" class="form-input w120"> Delete data older than days
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Disk Cleanup Target
+                                            </p>
+                                            <div class="item-user col-group">
+                                                <label for="check_2_1" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_2_1">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        Traffic consolidated logs
+                                                    </div>
+                                                </label>
+                                                <label for="check_2_2" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_2_2">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        Event log
+                                                    </div>
+                                                </label>
+                                                <label for="check_2_3" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_2_3">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        Security log
+                                                    </div>
+                                                </label>
+                                                <label for="check_2_4" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_2_4">
+                                                    <div class="check-item col-group">
+                                                        <i class="xi-check"></i>
+                                                        Statistical data
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Disk backup preferences
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Original data
+                                            </p>
+                                            <label for="check_3" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_3">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Maintain original data after backup
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Split backup files
+                                            </p>
+                                            <label for="check_4" class="check-label">
+                                                <input type="checkbox" class="check-input" id="check_4">
+                                                <div class="check-item col-group">
+                                                    <i class="xi-check"></i>
+                                                    Enable
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Split Capacity Unit
+                                            </p>
+                                            <div class="form-input-wrap">
+                                                <input type="text" class="form-input">
+                                                <span class="sticker">GB</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Backup location
+                                            </p>
+                                            <select name="" id="" class="form-select">
+                                                <option value="SCP">SCP</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-list col-group">
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Backup location
+                                                </p>
+                                                <input type="text" class="form-input" placeholder="IPv4 or IPv6">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Backup Port
+                                                </p>
+                                                <input type="number" class="form-input" value="22">
+                                            </div>
+                                        </div>
+                                        <div class="form-item row-group">
+                                            <p class="item-title">
+                                                Backup Path
+                                            </p>
+                                            <input type="text" class="form-input">
+                                        </div>
+                                        <div class="form-list col-group">
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Account
+                                                </p>
+                                                <input type="text" class="form-input">
+                                            </div>
+                                            <div class="form-item row-group">
+                                                <p class="item-title">
+                                                    Password
+                                                </p>
+                                                <input type="password" class="form-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <div class="form-item-title">
+                                        Automatic backup settings
+                                    </div>
+                                    <div class="form-list row-group">
+                                        <div class="form-item row-group">
+                                            <div class="item-user col-group">
+                                                Recent data retention period
+                                                <input type="number" class="form-input w120">
+                                                days (1 to 365 days)
+                                            </div>
+                                        </div>
+                                        <div class="form-item">
+                                            <div class="subpage-table-wrap">
+                                                <table class="subpage-table">
+                                                    <thead>
+                                                        <th>
+                                                            Backup destination
+                                                        </th>
+                                                        <th>
+                                                            Backup execution cycle
+                                                        </th>
+                                                        <th></th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="check_5" class="check-label">
+                                                                    <input type="checkbox" class="check-input" id="check_5">
+                                                                    <div class="check-item col-group">
+                                                                        <i class="xi-check"></i>
+                                                                        Traffic consolidated logs
+                                                                    </div>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <select name="" id="" class="form-select">
+                                                                    <option value="always">always</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <button class="add-btn">
+                                                                    <i class="xi-plus"></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="check_5" class="check-label">
+                                                                    <input type="checkbox" class="check-input" id="check_5">
+                                                                    <div class="check-item col-group">
+                                                                        <i class="xi-check"></i>
+                                                                        Event log
+                                                                    </div>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <select name="" id="" class="form-select">
+                                                                    <option value="always">always</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <button class="add-btn">
+                                                                    <i class="xi-plus"></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="check_5" class="check-label">
+                                                                    <input type="checkbox" class="check-input" id="check_5">
+                                                                    <div class="check-item col-group">
+                                                                        <i class="xi-check"></i>
+                                                                        Security log
+                                                                    </div>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <select name="" id="" class="form-select">
+                                                                    <option value="always">always</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <button class="add-btn">
+                                                                    <i class="xi-plus"></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="check_5" class="check-label">
+                                                                    <input type="checkbox" class="check-input" id="check_5">
+                                                                    <div class="check-item col-group">
+                                                                        <i class="xi-check"></i>
+                                                                        Statistical data
+                                                                    </div>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <select name="" id="" class="form-select">
+                                                                    <option value="always">always</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <button class="add-btn">
+                                                                    <i class="xi-plus"></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn">
+                                Save
+                            </button>
+                            <button class="dashboard-form-btn black">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

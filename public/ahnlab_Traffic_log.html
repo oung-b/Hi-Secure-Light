@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage">
+
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Firewall
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Log & Report
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Traffic Integration Log
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subpage-table-container">
+                    <div class="subpage-table-search-wrap col-group">
+                        <form action="">
+                            <input type="text" class="subpage-table-search-input">
+                        </form>
+                        <button type="submit" class="subpage-table-btn">
+                            Search
+                        </button>
+                    </div>
+
+                    <div class="subpage-table-wrap">
+                        <table class="report-table">
+                            <thead>
+                                <th>
+                                    Time
+                                </th>
+                                <th>
+                                    Processing method
+                                </th>
+                                <th>
+                                    Policy ID
+                                </th>
+                                <th>
+                                    Log ID
+                                </th>
+                                <th>
+                                    Source Addess
+                                </th>
+                                <th>
+                                    Source Port
+                                </th>
+                                <th>
+                                    Source Interface
+                                </th>
+                                <th>
+                                    Destination address
+                                </th>
+                                <th>
+                                    Destination Port
+                                </th>
+                                <th>
+                                    Destination Interface
+                                </th>
+                                <th>
+                                    Protocol
+                                </th>
+                                <th>
+                                    Device Control
+                                </th>
+                                <th>
+                                    Application name
+                                </th>
+                                <th>
+                                    Service
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr class="active"> <!-- 세션 생성 상태일 때 active 클래스 -->
+                                    <td>-</td>
+                                    <td>
+                                        <span class="state"></span>
+                                        Create session
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr> <!-- 세션 생성 상태일 때 active 클래스 삭제 -->
+                                    <td>-</td>
+                                    <td>
+                                        <span class="state"></span>
+                                        Create session
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

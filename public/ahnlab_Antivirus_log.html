@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage">
+                <div class="subpage-table-container">
+                    <div class="subpage-table-search-wrap col-group">
+                        <form action="">
+                            <input type="text" class="subpage-table-search-input">
+                        </form>
+                        <button type="submit" class="subpage-table-btn">
+                            Search
+                        </button>
+                    </div>
+
+                    <div class="subpage-table-wrap">
+                        <table class="report-table">
+                            <thead>
+                                <th>
+                                    시간
+                                </th>
+                                <th>
+                                    정책 아이디
+                                </th>
+                                <th>
+                                    세션 아이디
+                                </th>
+                                <th>
+                                    처리 방법
+                                </th>
+                                <th>
+                                    프로토콜
+                                </th>
+                                <th>
+                                    출발지 IP
+                                </th>
+                                <th>
+                                    출발지 포트
+                                </th>
+                                <th>
+                                    목적지 IP
+                                </th>
+                                <th>
+                                    목적지 포트
+                                </th>
+                                <th>
+                                    서비스
+                                </th>
+                                <th>
+                                    탐지 방향
+                                </th>
+                                <th>
+                                    파일 이름
+                                </th>
+                                <th>
+                                    파일 크기
+                                </th>
+                                <th>
+                                    진단명
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="100">
+                                        <p class="null-txt">
+                                            none
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

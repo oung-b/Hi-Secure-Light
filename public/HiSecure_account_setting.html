@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard dashboard-detail">
+            <div class="dashboard-wrap row-group">
+
+                <div class="dashboard-detail-title-wrap col-group">
+                    <button onclick="history.back();" class="prev-btn">
+                        <i class="xi-arrow-left"></i>
+                    </button>
+                    <h2 class="dashboard-detail-title">
+                        Hi-Secure Account Global Setting
+                    </h2>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="account-wrap">
+                        <div class="form-wrap">
+                            <div class="form-title">
+                               
+                            </div>
+    
+                            <div class="setting-txt-wrap">
+                                <div class="setting-txt">
+                                    If there is no input value when logging in, the session is terminated.
+                                </div>
+                                <div class="setting-txt col-group">
+                                    Time setting
+                                    <input type="number" class="setting-input" value="5">
+                                    Minute
+                                </div>
+                                <div class="setting-txt red">
+                                    If there is no input during that time, you will be automatically logged out.
+                                </div>
+                            </div>
+                            
+    
+                            <div class="form-btn-wrap col-group">
+                                <button class="form-btn hardware_del_btn">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+
+</html>

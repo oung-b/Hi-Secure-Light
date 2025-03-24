@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage">
+
+                <div class="subpage-table-container">
+                    <div class="subpage-table-edit-btn-wrap col-group">
+                        <!--
+                        <a href="ahnlab_IPv4_create.html" class="blue">
+                            Add <i class="xi-plus blue"></i>
+                        </a>
+                        <button class="subpage-table-edit-btn">
+                            <i class="xi-pen"></i>
+                        </button>-->
+<!--                        <button class="subpage-table-edit-btn">
+                            <i class="xi-close red"></i>
+                        </button>-->
+                    </div>
+                    <div class="subpage-table-search-wrap col-group">
+<!--                        <form action="">
+                            <input type="text" class="subpage-table-search-input">
+                        </form>
+                        <button type="submit" class="subpage-table-btn">
+                            Search
+                        </button>-->
+                    </div>
+
+                    <div class="subpage-table-wrap account-table-wrap">
+                        <div class="subpage-table-title-wrap">
+                            <h3 class="subpage-table-title">
+                                IPv4 Policy
+                            </h3>
+                        </div>
+                        <table class="ipv4-policy-table">
+                            <!-- <colgroup>
+                                <col width="36px">
+                            </colgroup> -->
+                            <thead>
+                            <tr>
+                                <!--                                <th>
+                                    <label for="check_all" class="check-label">
+                                        <input type="checkbox" class="check-input" id="check_all">
+                                        <div class="check-item">
+                                            <i class="xi-check"></i>
+                                        </div>
+                                    </label>
+                                </th>-->
+                                <th>
+                                    NAME
+                                </th>
+                                <th>
+                                    TYPE
+                                </th>
+                                <th>
+                                    IP
+                                </th>
+                                <th>
+                                    PREFIX_NET
+                                </th>
+                                <th>
+                                    INTERFACE
+                                </th>
+                                <th>
+                                    DESCRIPTION
+                                </th>
+                                <th>
+                                    REFERENCE_COUNT
+                                </th>
+                                <th>
+                                    ZONE
+                                </th>
+                                <th>
+                                    VID
+                                </th>
+                                <th>
+                                    APPLY_FLAG
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>all</td>
+                                    <td>1</td>
+                                    <td>0.0.0.0</td>
+                                    <td>0</td>
+                                    <td>all</td>
+                                    <td>All address</td>
+                                    <td>-</td>
+                                    <td>ALL</td>
+                                    <td></td>
+                                    <td>0</td>
+                                    <td><button class="m-btn type01 red" data-value="all">REMOVE</button></td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
+    function getIps(){
+        axios.get( "/api/ips")
+            .then(response => {
+                $(".subpage-table-wrap tbody").html("");
+
+                let items = response.data.data;
+
+                items.map(item => {
+                    $(".subpage-table-wrap tbody").append(`<tr>
+<td>${item.name}</td>
+<td>${item.type}</td>
+<td>${item.ip4_address}</td>
+<td>${item.ip4_prefix_net}</td>
+<td>${item.interface}</td>
+<td>${item.description}</td>
+<td>${item.reference_count}</td>
+<td>${item.zone}</td>
+<td>${item.vid}</td>
+<td>${item.apply_flag}</td>
+<td><button class="m-btn type01 red" data-value="${item.name}">REMOVE</button></td>
+</tr>`)
+                });
+
+                $(".subpage-table-wrap tbody .m-btn").unbind("click").bind("click", function (){
+                    let name = $(this).attr("data-value");
+
+                    openLoading();
+
+                    axios.delete("/api/ips", {
+                        params: {
+                            name: name
+                        }
+                    }).then(response => {
+                        getIps();
+                    });
+                });
+            });
+    }
+
+    getIps();
+</script>
+</html>

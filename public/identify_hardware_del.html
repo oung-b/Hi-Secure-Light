@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0" />
+
+<title></title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="XEIcon/xeicon.min.css">
+<link rel="stylesheet" type="text/css" href="css/dashboard_style.css">
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단 헤더 -->
+        <header id="header"></header>
+        <!-- //상단 헤더 -->
+
+        <!-- 좌측 메뉴 -->
+        <div id="gnb"></div>
+        <!-- //좌측 메뉴 -->
+
+        <!-- 대시보드 -->
+        <div class="dashboard">
+            <div class="subpage gray">
+                <div class="dashboard-menu-wrap col-group">
+                    <div class="dashboard-menu-nav col-group">
+                        <div class="dashboard-menu-nav-item">
+                            Cyber Resilience of ship
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item">
+                            Identify
+                        </div>
+                        <i class="icon xi-angle-right"></i>
+                        <div class="dashboard-menu-nav-item active">
+                            Hardware
+                        </div>
+                    </div>
+                    <div class="subpage-table-btn-wrap col-group">
+                        <a href="identify_hardware_add.html" class="subpage-table-btn">
+                            Add
+                        </a>
+                        <a href="identify_hardware_del.html" class="subpage-table-btn active">
+                            Del
+                        </a>
+                        <button class="subpage-table-btn">
+                            Edit
+                        </button>
+                        <button class="subpage-table-btn">
+                            Save
+                        </button>
+                        <button class="subpage-table-btn">
+                            Export
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-container">
+                    <div class="dashboard-form-wrap">
+                        <div class="dashboard-form-title">
+                            Hardware Inbentory
+                        </div>
+
+                        <div class="modal-table-container">
+                            <div class="modal-table-wrap dashboard-table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Zone
+                                            </th>
+                                            <th>
+                                                Asset Name
+                                            </th>
+                                            <th>
+                                                IP
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">
+                                                A Zone
+                                            </td>
+                                            <td>
+                                                CBS#1
+                                            </td>
+                                            <td>
+                                                192.168.0.176
+                                            </td>
+                                            <td>
+                                                <label for="check_1" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_1">
+                                                    <div class="check-item">
+                                                        <i class="xi-check"></i>
+                                                    </div>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                CBS#1
+                                            </td>
+                                            <td>
+                                                192.168.0.176
+                                            </td>
+                                            <td>
+                                                <label for="check_2" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_2">
+                                                    <div class="check-item">
+                                                        <i class="xi-check"></i>
+                                                    </div>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                CBS#1
+                                            </td>
+                                            <td>
+                                                192.168.0.176
+                                            </td>
+                                            <td>
+                                                <label for="check_3" class="check-label">
+                                                    <input type="checkbox" class="check-input" id="check_3">
+                                                    <div class="check-item">
+                                                        <i class="xi-check"></i>
+                                                    </div>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="dashboard-form-btn-wrap col-group">
+                            <button class="dashboard-form-btn hardware_del_btn">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 대시보드 -->
+
+        <!-- delete 팝업 -->
+        <div class="modal-container modal-alert" style="display: none;">
+            <div class="modal-wrap modal-alert-wrap warning">
+                <div class="modal-title">
+                    <i class="xi-close close-btn"></i>
+                </div>
+
+                <div class="modal-alert-txt-wrap">
+                    <div class="modal-alert-title-wrap row-group">
+                        <i class="xi-warning icon"></i>
+                        <p class="modal-alert-title">
+                            Warning
+                        </p>
+                    </div>
+
+                    <p class="modal-alert-txt">
+                        If deleted, the data cannot be recovered. <br>
+                        Are you sure you want to delete?
+                    </p>
+                </div>
+
+                <div class="dashboard-form-btn-wrap col-group">
+                    <button class="dashboard-form-btn submit-btn">
+                        Delete
+                    </button>
+                    <button class="dashboard-form-btn cancel-btn">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 차트 -->
+<script>
+
+    //모달
+    $('.modal-container .close-btn').click(function () {
+        $(this).closest('.modal-container').fadeOut();
+    });
+
+    $('.hardware_del_btn').click(function () {
+        $('.modal-alert').fadeIn();
+    });
+
+</script>
+
+</html>
