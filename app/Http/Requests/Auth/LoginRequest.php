@@ -60,12 +60,13 @@ class LoginRequest extends FormRequest
                     $user->save();
                     $userLog->failLog();
                     throw ValidationException::withMessages([
-                        'ids' => trans('The account is deactivated, so please contact the administrator.'),
+                        'ids' => trans('auth.deactivated'),
                     ]);
                 } else {
                     $userLog->failLog();
                     throw ValidationException::withMessages([
-                        'ids' => trans($user->password_count.'/5 Wrong password. Try again or click Forgot password to reset it.'),
+                        // 'ids' => trans($user->password_count.'/5 Wrong password. Try again or click Forgot password to reset it.'),
+                        'ids' => trans('auth.failed'),
                     ]);
                 }
             } else {

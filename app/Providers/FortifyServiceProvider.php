@@ -73,7 +73,8 @@ class FortifyServiceProvider extends ServiceProvider
                         ]);
                     } else {
                         throw ValidationException::withMessages([
-                            'ids' => trans($user->password_count . '/5 Wrong password. Try again or click Forgot password to reset it.'),
+                            // 'ids' => trans($user->password_count . '/5 Wrong password. Try again or click Forgot password to reset it.'),
+                            'ids' => trans('auth.failed'),
                         ]);
                     }
                 }
