@@ -287,9 +287,9 @@
 
         </div>
 
-        <div class="dashboard-gnb-version" style="width: 25%;">
+        <div class="dashboard-gnb-version">
             <p class="txt">
-                Ver. 1.8
+                Ver. L-1.0.0
             </p>
         </div>
 
