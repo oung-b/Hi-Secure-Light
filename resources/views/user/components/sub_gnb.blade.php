@@ -99,11 +99,11 @@
                                 User Logs
                             </div>
                         </a>
-                        <a href="{{ route('log.inventory-log') }}" class="sub-gnb-menu">
+                        {{-- <a href="{{ route('log.inventory-log') }}" class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 Inventory Log
                             </div>
-                        </a>
+                        </a> --}}
                         <a href="{{ route('log.system-log') }}" class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 System Log

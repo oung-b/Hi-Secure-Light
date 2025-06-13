@@ -34,14 +34,14 @@
 				Function
 			</p>
 		</button>
-		<button class="header-menu-btn header-menu-btn_ISS" data-gnb="information-gnb" id="information">
+		{{-- <button class="header-menu-btn header-menu-btn_ISS" data-gnb="information-gnb" id="information">
 			<div class="icon"></div>
 			<p class="txt">
 				Information <br>
 				for the Ship <br>
 				System
 			</p>
-		</button>
+		</button> --}}
 	</div>
 
 	<!-- <div class="header-btm-wrap row-group"> -->
