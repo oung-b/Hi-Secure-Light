@@ -25,7 +25,7 @@
                     <i class="xi-arrow-left"></i>
                 </button>
                 <h2 class="dashboard-detail-title">
-                    Policy Control Add
+                    {{ request()->segment(4) === 'outgoing' ? 'Outgoing' : 'Incoming-Internal-And-Vpn' }} Policy Control Add
                 </h2>
             </div>
 
@@ -33,35 +33,45 @@
                 <div class="account-wrap">
                     <form action="" method="post" id="form">
                         @csrf
+                        <input type="hidden" name="policyType" value="{{ request()->segment(4) }}">
                         <div class="modify-group col-group">
                             <div>
                                 <div class="account-form row-group">
                                     <div class="form-item row-group">
                                         <p class="item-title">
-                                            Source IP
+                                            Name
                                         </p>
                                         <div class="item-user col-group">
-                                            <input type="text" class="form-input" name="source_ip_object">
+                                            <input type="text" class="form-input" name="name">
                                         </div>
-                                        <p class="error-txt validation-txt" id="validation-source_ip_object" style="display: none"></p>
+                                        <p class="error-txt validation-txt" id="validation-name" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
-                                            Destination IP
+                                            Source
                                         </p>
                                         <div class="item-user col-group">
-                                            <input type="text" class="form-input" name="destination_ip_object">
+                                            <input type="text" class="form-input" name="source">
                                         </div>
-                                        <p class="error-txt validation-txt" id="validation-destination_ip_object" style="display: none"></p>
+                                        <p class="error-txt validation-txt" id="validation-source" style="display: none"></p>
+                                    </div>
+                                    <div class="form-item row-group">
+                                        <p class="item-title">
+                                            Destination
+                                        </p>
+                                        <div class="item-user col-group">
+                                            <input type="text" class="form-input" name="destination">
+                                        </div>
+                                        <p class="error-txt validation-txt" id="validation-destination" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
                                             Service
                                         </p>
                                         <div class="item-user col-group">
-                                            <input type="text" class="form-input" name="service_object">
+                                            <input type="text" class="form-input" name="service">
                                         </div>
-                                        <p class="error-txt validation-txt" id="validation-service_object" style="display: none"></p>
+                                        <p class="error-txt validation-txt" id="validation-service" style="display: none"></p>
                                     </div>
                                     <div class="form-item row-group">
                                         <p class="item-title">
@@ -69,13 +79,13 @@
                                         </p>
                                         <div class="form-label-wrap col-group">
                                             <label for="check_1" class="form-label">
-                                                <input type="radio" id="check_1" name="action" value="2">
+                                                <input type="radio" id="check_1" name="action" value="accept">
                                                 <div class="form-label-btn">
-                                                    Allow
+                                                    Accept
                                                 </div>
                                             </label>
                                             <label for="check_2" class="form-label">
-                                                <input type="radio" id="check_2" name="action" value="1">
+                                                <input type="radio" id="check_2" name="action" value="block">
                                                 <div class="form-label-btn">
                                                     Block
                                                 </div>
@@ -122,7 +132,7 @@
     document.getElementById('submit').addEventListener('click', function () {
         let form = document.getElementById('form');
         let formData = new FormData(form);
-        fetchUtility("{{ route('firewall.policy-store', explode('/', request()->path())[2]) }}", formData, true);
+        fetchUtility("{{ route('firewall.policy-store', ['fw' => request()->segment(3)]) }}", formData, true);
     });
 </script>
 </body>

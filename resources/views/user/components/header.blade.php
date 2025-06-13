@@ -1,7 +1,9 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<div class="header-wrap row-group">
-	<div class="header-top-wrap row-group">
+<!-- <div class="header-wrap row-group"> -->
+<div class="header-wrap">
+	<!-- <div class="header-top-wrap row-group"> -->
+    <div class="header-top-wrap">
 		<a href="{{ route('dash-board.index') }}">
 			<img src="/images/logo_hd.png" alt="" class="logo">
 		</a>
@@ -9,7 +11,8 @@
 			<i class="xi-hamburger-out"></i>
 		</button> -->
 	</div>
-	<div class="header-menu-wrap row-group">
+	<!-- <div class="header-menu-wrap row-group"> -->
+    <div class="header-menu-wrap">
 		<a href="{{ route('dash-board.index') }}" class="header-menu-btn header-menu-btn_DB" id="dash-board">
 			<div class="icon"></div>
 			<p class="txt">
@@ -41,15 +44,16 @@
 		</button>
 	</div>
 
-	<div class="header-btm-wrap row-group">
+	<!-- <div class="header-btm-wrap row-group"> -->
+    <div class="header-btm-wrap">
 		<a href="{{ route('hi-secure.index') }}" class="header-btm-btn">
-            <p class="account-type">
+            <!-- <p class="account-type">
                 {{ Auth::user()->group->name }}
-            </p>
+            </p>-->
 			<i class="xi-profile icon"></i>
-            <p class="account-type account-id">
+            <!--<p class="account-type account-id">
                 {{ Auth::user()->ids }}
-            </p>
+            </p>-->
 		</a>
 		<form action="{{ route('logout') }}" method="post">
 			@csrf
@@ -66,11 +70,6 @@
 			<i class="xi-angle-down-min icon toggle-icon"></i>
 		</button>-->
 	</div>
-    <div class="header-menu-btn header-menu-btn_ISS">
-        <p class="txt">
-            Ver. 1.8
-        </p>
-    </div>
 </div>
 
 <script>

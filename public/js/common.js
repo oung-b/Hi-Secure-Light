@@ -328,13 +328,16 @@ $(document).ready(function(){
         }
     }
 
-    getHistories();
-    getDashboard();
-
-    setInterval(() => {
+    // 대시보드 페이지에서만 실행
+    if (window.location.pathname.includes('/dash-board')) {
         getHistories();
         getDashboard();
-    }, 10000);
+
+        setInterval(() => {
+            getHistories();
+            getDashboard();
+        }, 10000);
+    }
 
 
     //모달 닫기//
@@ -438,10 +441,10 @@ $(document).ready(function(){
     }
 
     // 실서버에서만 동작하게
-    if(!location.href.includes("localhost")){
-        getBlocks();
-        getAllows();
-    }
+    // if(!location.href.includes("localhost")){
+    //     getBlocks();
+    //     getAllows();
+    // }
 });
 
 // 글자 자르기

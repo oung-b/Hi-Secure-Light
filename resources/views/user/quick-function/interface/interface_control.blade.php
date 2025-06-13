@@ -22,7 +22,7 @@
 
             <div class="subpage-table-container">
                 @if(Auth::user()->authority_id === 1)
-                    <div class="subpage-table-btn-wrap col-group sticker">
+                    <div class="subpage-table-btn-wrap col-group">
                         <form action="" method="post" id="enable">
                             @csrf
                             @method('PATCH')
@@ -32,7 +32,7 @@
                         </form>
                     </div>
                 @endif
-                <div class="interface_control_wrap">
+                {{-- <div class="interface_control_wrap">
                     <div class="title_wrap col-group">
                         <img src="/images/ahnlab_logo.png" alt="" class="logo">
                         <p class="title col-group">
@@ -170,7 +170,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="subpage-table-wrap account-table-wrap">
                     <table>
                         <thead>
@@ -185,56 +185,40 @@
                             </th>
                             <th>
                                 <label for="sort_Enable" class="sort-item">
-                                    Enable
-                                    {{--                                    <input type="checkbox" id="sort_Enable">--}}
-                                    {{--                                    <i class="xi-caret-down-min"></i>--}}
+                                    Status
                                 </label>
                             </th>
                             <th>
                                 <label for="sort_Interface" class="sort-item">
-                                    Interface
-                                    {{--                                    <input type="checkbox" id="sort_Interface">--}}
-                                    {{--                                    <i class="xi-caret-down-min"></i>--}}
-                                </label>
-                            </th>
-                            <th>
-                                <label for="sort_Zone" class="sort-item">
-                                    Zone
-                                    {{--                                    <input type="checkbox" id="sort_Zone">--}}
-                                    {{--                                    <i class="xi-caret-down-min"></i>--}}
+                                    Name
                                 </label>
                             </th>
                             <th>
                                 <label for="sort_IPv4" class="sort-item">
                                     IPv4
-                                    {{--                                    <input type="checkbox" id="sort_IPv4">--}}
-                                    {{--                                    <i class="xi-caret-down-min"></i>--}}
                                 </label>
                             </th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($items as $item)
+                        @foreach($interfaces as $interface)
                             <tr>
                                 <td>
-                                    <label for="{{ $item['name'] }}" class="check-label">
-                                        <input type="radio" class="check-input" id="{{ $item['name'] }}" name="interface">
+                                    <label for="{{ $interface['name'] }}" class="check-label">
+                                        <input type="radio" class="check-input" id="{{ $interface['name'] }}" name="interface" data-status="{{ $interface['status'] }}">
                                         <div class="check-item col-group">
                                             <i class="xi-check"></i>
                                         </div>
                                     </label>
                                 </td>
                                 <td>
-                                    {{ $item['interface_up_down_enable'] == 1 ? 'Enable' : 'Disable' }}
+                                    {{ $interface['status'] == 'off' ? 'Disable' : 'Enable' }}
                                 </td>
                                 <td>
-                                    {{ $item['name'] }}
+                                    {{ $interface['name'] }}
                                 </td>
                                 <td>
-                                    {{ $item['zone'] }}
-                                </td>
-                                <td>
-                                    {{ $item['ip4_address'] }}/{{ $item['ip4_prefix'] }}
+                                    {{ $interface['ipv4-address'] }}
                                 </td>
                             </tr>
                         @endforeach
@@ -279,20 +263,13 @@
     </div>
 
 </div>
-<script>
-    var enables = {!! json_encode($enables) !!};
-
-    enables.forEach(function(name) {
-        $(`.port_item > input[id="port_${name}"]`).prop('checked', true);
-    });
-</script>
 <script src="{{ asset('js/utility.js') }}"></script>
 <script>
     function interfaceEnable() {
         let checkedCheckbox = document.querySelector('.check-input:checked');
         if (checkedCheckbox) {
-            let url = "{{ route('firewall.interface-enable', ['fw' => request()->segment(3), 'interfaceName' => ':interfaceName']) }}"
-                .replace(':interfaceName', checkedCheckbox.id);
+            let url = "{{ route('firewall.interface-enable', ['fw' => request()->segment(3), 'interfaceName' => ':interfaceName', 'status' => ':status']) }}"
+                .replace(':interfaceName', checkedCheckbox.id).replace(':status', checkedCheckbox.getAttribute('data-status') === 'off' ? 'off' : 'on');
 
             let enableForm = document.getElementById('enable');
             let formData = new FormData(enableForm);

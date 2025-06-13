@@ -157,21 +157,23 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .blue { color: #524eee; }
 
 /* 상단 헤더 */
-.header-wrap { height: 100vh; width: 96px; position: fixed; top: 0; left: 0; background: #fff; padding-top: 32px; padding-bottom: 64px; justify-content: space-between; padding: 32px 20px 64px; z-index: 99999; }
-.header-top-wrap { gap: 8px; align-items: flex-end; }
-.header-top-wrap .logo { width: 56px; height: 56px; object-fit: contain; object-position: center; }
+/* .header-wrap { height: 100vh; width: 96px; position: fixed; top: 0; left: 0; background: #fff; padding-top: 32px; padding-bottom: 64px; justify-content: space-between; padding: 32px 20px 64px; z-index: 99999; } */
+.header-wrap { margin-bottom: 8px; display: flex; height: 100px; width: 100%; top: 0; left: 0; background: #fff; padding-bottom: 64px; justify-content: space-between; padding: 32px 20px; box-sizing: border-box; z-index: 99999; }
+.header-top-wrap { gap: 8px; align-items: center; display: flex; }
+.header-top-wrap .logo { width: 56px; height: 56px; object-fit: contain; object-position: center; display: flex; align-items: center; justify-content: center; }
 .header-gnb-btn { width: 56px; height: 56px; text-align: center; }
 .header-gnb-btn i { font-size: 34px; color: #aaa; line-height: 56px; transition: .3s; }
 .header-gnb-btn:hover i { color: #292d33; }
 
-.header-menu-wrap { gap: 24px; }
-.header-menu-btn { gap: 8px; font-size: 16px; font-weight: bold; align-items: center; }
-.header-menu-btn .icon { width: 56px; height: 56px; border-radius: 13px; box-shadow: 2px 3px 6px 0 rgba(0, 0, 0, 0.1); background-repeat: no-repeat; background-size: 100%; background-position: center; margin-bottom: 6px; transition: .3s; }
+/* .header-menu-wrap { gap: 24px; } */
+.header-menu-wrap { gap: 24px; display: flex; }
+.header-menu-btn { display: flex; gap: 8px; font-size: 16px; font-weight: bold; align-items: center; }
+.header-menu-btn .icon { width: 56px; height: 56px; border-radius: 13px; box-shadow: 2px 3px 6px 0 rgba(0, 0, 0, 0.1); background-repeat: no-repeat; background-size: 100%; background-position: center; transition: .3s; }
 .header-menu-btn_DB .icon { background-image: url(../images/Dash_off.png); }
 .header-menu-btn_MM .icon { background-image: url(../images/MAINMENU_off.png); }
 .header-menu-btn_QF .icon { background-image: url(../images/Quick_off.png); }
 .header-menu-btn_ISS .icon { background-image: url(../images/Information_off.png); }
-.header-menu-btn .txt { font-size: 11px; text-align: center; color: #aaa; transition: .3s; }
+.header-menu-btn .txt { font-size: 15px; text-align: center; color: #aaa; transition: .3s; }
 
 .header-menu-btn_DB:hover .icon, .header-menu-btn_DB.active .icon { background-image: url(../images/Dash_on.png); }
 .header-menu-btn_MM:hover .icon, .header-menu-btn_MM.active .icon { background-image: url(../images/MAINMENU_on.png); }
@@ -182,7 +184,8 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .dimming-btn { position: relative; padding-left: 16px; }
 .dimming-btn ::after { content: ''; display: block; position: absolute; width: 1px; height: 12px; background: #a4a4a4; left: -8px; top: 50%; transform: translateY(-50%); }
 
-.header-btm-wrap { gap: 20px; align-items: center; }
+/* .header-btm-wrap { gap: 20px; align-items: center; } */
+.header-btm-wrap { gap: 20px; align-items: center; display: flex;}
 .header-btm-btn { width: 100%; text-align: center; }
 .header-btm-btn i { font-size: 30px; color: #aaa; transition: .3s; }
 .header-btm-btn:hover i { color: #292d33; }
@@ -190,8 +193,8 @@ textarea { border: 0; outline: 0; resize: none; font-family: "Pretendard", sans-
 .header-btm-btn .account-id  {font-size: 11px; font-weight: 300; color: #aaa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 4px; }
 
 /* 좌측 메뉴 공통 */
-#gnb { position: absolute; left: 0; width: 307px; height: 100vh; background: #fff; margin-left: 96px; z-index: 99; }
-.dashboard-gnb { padding: 12px 0; padding-right: 15px; height: 100%; overflow: auto; }
+#gnb { position: absolute; left: 0; width: 307px; height: calc(100vh - 108px); background: #fff; z-index: 99; }
+.dashboard-gnb { padding: 12px 0; padding: 12px; height: 100%; overflow: auto; }
 .dashboard-gnb::-webkit-scrollbar { display: none; }
 .header-utc-wrap { gap: 16px; width: 100%; padding: 6px 24px; border-radius: 15px; background: #f5f5f5; justify-content: center; margin-bottom: 32px; }
 .header-utc-wrap .utc { font-size: 14px; font-weight: bold; position: relative; }
@@ -235,9 +238,9 @@ a.sub-gnb-menu.active > .sub-gnb-menu-title { background: #292d33; color: #fff; 
 #dashboard_gnb { position: absolute; left: 0; width: 307px; height: 100vh; background: #fff; margin-left: 96px; z-index: 99; }
 .dashboard-gnb-container { gap: 10px; }
 .dashboard-gnb-container .dashboard-gnb-wrap { padding: 10px; background: #f5f5f5; border-radius: 8px; }
-.dashboard-gnb-wrap .time { position: absolute; top: 8px; right: 0; font-size: 10px; font-weight: normal; }
+.dashboard-gnb-wrap .time { position: absolute; top: 8px; right: 0; font-size: 14px; font-weight: normal; }
 .dashboard-gnb-title { font-size: 16px; font-weight: bold; margin-bottom: 8px; position: relative; }
-.dashboard-gnb-title .time { top: 4px; }
+.dashboard-gnb-title .time { top: 1px; }
 
 /* 좌측 메뉴 - 대시보드 - Standard */
 .dashboard-standard-wrap { gap: 10px; flex-flow: wrap; }
@@ -304,7 +307,7 @@ tbody .state.red {
     background-image: url(../images/polar_item_bg.svg); background-repeat: no-repeat; background-size: cover; */
 }
 .polar-area-chart.active { display: block; }
-.polar-area-chart .time { top: -20px; }
+.polar-area-chart .time { top: -23px; }
 .polar-area-chart canvas { margin: 0 auto; }
 .polar-area-chart-item { height: 100%; width: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .polar-area-chart-item .img-box { height: 100%; width: 100%; clip-path: circle(50% at 50% 50%); border-radius: 50%; overflow: hidden; z-index: 1; transition: .3s; }
@@ -364,8 +367,8 @@ tbody .state.red {
 .devices-status-item .date { font-size: 16px; font-weight: 300; color: #6b6b6b; }
 
 /* 대시보드 */
-.dashboard { width: 100%; max-width:100vw; padding-left: 406px; height: 100vh; }
-.dashboard-wrap { width: 100%; gap: 12px; padding: 12px; height: 100%; min-width: 1480px;}
+.dashboard { width: 100%; max-width:100vw; padding-left: 307px; height: calc(100vh - 108px); box-sizing: border-box; }
+.dashboard-wrap { background-color: white; width: 100%; gap: 12px; padding: 12px 12px 12px 12px; height: 100%; min-width: 1480px; box-sizing: border-box; border-left: 8px solid #e4e4e4; }
 
 /* 대시보드 상단 */
 .dashboard-top { gap: 40px; width: 100%; padding: 24px; background: #f5f5f5; border-radius: 8px; }
@@ -599,7 +602,7 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 /**/
 
 /* 서브페이지 */
-.subpage { padding: 12px 24px; height: 100vh; }
+/* .subpage { padding: 12px 24px; height: 100vh; } */
 
 .modal-container { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; background: rgba(0, 0, 0, 0.3); }
 .modal-wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 3px 36px 0 rgba(0, 0, 0, 0.1); background: #fff; max-width: 840px; border-radius: 24px; width: 100%; overflow: hidden; padding: 32px 40px 0; }
@@ -783,7 +786,8 @@ a.device-item:hover .device-item-zone, .device-btn:hover .device-item-zone { opa
 .modal-alert-wrap.warning .dashboard-form-btn.submit-btn { background: #ff4620; }
 
 /* 상세 페이지 - 테이블 */
-.subpage-table-container { background: #fff; position: relative; border-radius: 12px; height: 100%; display: flex; flex-flow: wrap; gap: 16px; padding: 16px; overflow: hidden; }
+/* .subpage-table-container { background: #fff; position: relative; border-radius: 12px; height: 100%; display: flex; flex-flow: wrap; gap: 16px; padding: 16px; overflow: hidden; } */
+.subpage-table-container { background: #fff; position: relative; height: 100%; display: flex; flex-flow: wrap; gap: 16px; padding: 16px; overflow: hidden; border-left: 8px solid #e4e4e4; }
 /* .subpage-table-container:after {
     content:""; width:100%; height:22px;
     position: absolute; bottom:16px; left:0;

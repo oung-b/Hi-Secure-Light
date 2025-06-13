@@ -9,10 +9,12 @@ class PolicyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'source_ip_object' => ['required'],
-            'destination_ip_object' => ['required'],
-            'service_object' => ['required'],
-            'action' => ['required', 'in:1, 2'],
+            'policyType' => ['required'],
+            'name' => ['required'],
+            'source' => ['required'],
+            'destination' => ['required'],
+            'service' => ['required'],
+            'action' => ['required', 'in:accept,block'],
         ];
     }
 

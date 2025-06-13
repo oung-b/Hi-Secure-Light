@@ -270,13 +270,13 @@
             </div>
 
             <div class="polar-area-chart active" id="tab_01">
-                <div class="time">
+                <div class="time" style="right: 10px;">
                     Last 24 Hours
                 </div>
                 <canvas id="polar_area_chart_01"></canvas>
             </div>
             <div class="polar-area-chart" id="tab_02">
-                <div class="time">
+                <div class="time" style="right: 10px;">
                     Last 24 Hours
                 </div>
                 <canvas id="polar_area_chart_02"></canvas>
@@ -287,7 +287,14 @@
 
         </div>
 
+        <div class="dashboard-gnb-version" style="width: 25%;">
+            <p class="txt">
+                Ver. 1.8
+            </p>
+        </div>
+
     </div>
+
 </div>
 
 @include('user.components.sub_gnb')

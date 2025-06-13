@@ -8,10 +8,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Log;
 
 class FirewallApi extends Model
 {
     use HasFactory;
+
+    // check-point 방화벽
+    private $id = 'manager';
+    private $password = 'hms_1qa2ws';
+    private $header_key = 'X-chkp-sid';
+
+    private $script_outgoing = 'show access-rules type outgoing';
+    private $script_incoming = 'show access-rules type incoming-internal-and-vpn';
+    private $script_interface = 'show interfaces';
 
     protected $client;
 
@@ -23,83 +33,245 @@ class FirewallApi extends Model
     {
         parent::__construct($attributes);
 
-        if(config("app.env") == "production")
+        if($domain !== null) {
             $this->domain = $domain;
+        }
 
+        // Laravel Http 클라이언트를 생성, verity 옵션을 false로 설정하여 ssl 인증서를 검증하지 않도록 한다.
+        // 그렇게 만들어진 Http 인스턴스를 $client변수에 저장
         $this->client = Http::withOptions([
             'verify' => false
         ]);
 
-        // get token
-        $this->token = $this->client->post($this->domain . "/token", [
-            'id' => 'admin',
-            'password' => 'qwe123!@#'
-        ])->json()['token'];
-
-//        $this->client = new Client([
-//            "verify" => false,
-//            'headers' => [
-//                'Accept' => 'application/json',
-//                'Content-Type' => 'application/json;charset=UTF-8',
-//            ],
-//        ]);
-//
-//        // get token
-//        $response = $this->client->request("post",$this->domain."/token", [
-//            "json" => [
-//                "id" => "admin",
-//                "password"=> "qwe123!@#"
-//            ]
-//        ]);
-//
-//        // login
-//        $this->token = json_decode($response->getBody()->getContents(), true)["token"];
-
         $this->login();
     }
 
+    // 로그인
     public function login()
     {
-        $this->client->withHeaders([
-            'Authorization' => $this->token,
-        ])->post($this->domain . "/login");
-//        $response = $this->client->request("post",$this->domain."/login", [
-//            'headers' => [
-//                'Accept' => 'application/json',
-//                'Content-Type' => 'application/json;charset=UTF-8',
-//                "Authorization" => $this->token,
-//            ],
-//        ]);
+        $this->token = $this->client->withHeaders([
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json'
+        ])->post($this->domain . "/login", [
+            'user' => $this->id,
+            'password' => $this->password
+        ])->json()['sid'];
     }
 
+    // 로그아웃
     public function logout()
     {
-        $this->client->post($this->domain . "/logout");
-//        $response = $this->client->request("post",$this->domain."/logout", [
-//            'headers' => [
-//                'Accept' => 'application/json',
-//                'Content-Type' => 'application/json;charset=UTF-8',
-//                "Authorization" => $this->token,
-//            ],
-//        ]);
+        $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/logout");
     }
 
+    // 텍스트 테이블 데이터를 JSON 형식으로 변환
+    public function textTableDataToJson($decodeData)
+    {
+        // 텍스트 테이블을 배열로 변환(테이블 형태의 텍스트 데이터로 되어있음)
+        $lines = explode("\n", trim($decodeData));
+        $jsonDatas = [];
+
+        // 헤더 추출 (2번째 줄에서 '|'로 구분하여 추출)
+        if (count($lines) >= 2) {
+            $headerLine = $lines[1]; // 헤더 줄
+            $headers = [];
+            $headerParts = explode('|', $headerLine);
+
+            foreach ($headerParts as $part) {
+                $part = trim($part);
+                if (!empty($part)) {
+                    $headers[] = $part;
+                }
+            }
+
+            // 데이터 행 추출 (4번째 줄부터 마지막 구분선 전까지)
+            for ($i = 3; $i < count($lines) - 1; $i++) {
+                if (strpos($lines[$i], '-----------') === false) { // 구분선 제외
+                    $rowData = [];
+                    $rowParts = explode('|', $lines[$i]);
+                    $colIndex = 0;
+
+                    foreach ($rowParts as $part) {
+                        $part = trim($part);
+                        if (!empty($part) && isset($headers[$colIndex])) {
+                            $rowData[$headers[$colIndex]] = $part;
+                            $colIndex++;
+                        }
+                    }
+
+                    if (!empty($rowData)) {
+                        $jsonDatas[] = $rowData;
+                    }
+                }
+            }
+        }
+
+        return $jsonDatas;
+    }
+
+    // 텍스트 키:값 데이터를 json 형식으로 변환
+    public function textKeyValueToJson($decodeData)
+    {
+        $arrayDatas = explode("\n", trim($decodeData));
+
+        $dataArray = [];
+
+        foreach ($arrayDatas as $arrayData) {
+            // 키와 값 분리
+            if (preg_match('/^([^:]+):\s*(.*)$/', $arrayData, $matches)) {
+                $key = trim($matches[1]);
+                $value = trim($matches[2]);
+                $dataArray[$key] = $value;
+            }
+        }
+
+        return $dataArray;
+    }
+
+    // 텍스트 키:값 데이터를 json list 형식으로 변환
+    function textKeyValueToJsonList($rawData) {
+        $lines = explode("\n", $rawData);
+        $result = [];
+        $currentInterface = null;
+
+        foreach ($lines as $line) {
+            $line = trim($line);
+
+            // 빈 줄은 건너뜁니다
+            if (empty($line)) {
+                continue;
+            }
+
+            // 키:값 형식 파싱
+            if (preg_match('/^([^:]+):\s*(.*)$/', $line, $matches)) {
+                $key = trim($matches[1]);
+                $value = trim($matches[2]);
+
+                // name 키를 만나면 새 인터페이스 시작
+                if ($key === 'name') {
+                    $currentInterface = $value;
+                    $result[$currentInterface] = [
+                        'name' => $value,
+                        'ipv4-address' => '',
+                        'status' => ''
+                    ];
+                }
+                // 현재 인터페이스에 속성 추가
+                elseif ($currentInterface !== null && isset($result[$currentInterface])) {
+                    $result[$currentInterface][$key] = $value;
+                }
+            }
+        }
+
+        // 배열의 값들만 반환 (인덱스 배열로 변환)
+        return array_values($result);
+    }
+
+    // 아웃고잉 정책 조회
+    public function outgoingPolicy()
+    {
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($this->script_outgoing)
+        ]);
+
+        $decodeData = base64_decode($response->json()['output']);
+
+        // 텍스트 테이블 데이터이기 때문에 json으로 변환
+        $jsonData = $this->textTableDataToJson($decodeData);
+
+        return $jsonData;
+    }
+
+    // 인바운드 정책 조회
+    public function incomingPolicy()
+    {
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($this->script_incoming)
+        ]);
+
+        $decodeData = base64_decode($response->json()['output']);
+
+        // 텍스트 테이블 데이터이기 때문에 json으로 변환
+        $jsonData = $this->textTableDataToJson($decodeData);
+
+        return $jsonData;
+    }
+
+    // 정책에 대한 관련 정보들 요청
     public function policyIndex()
     {
-        $response = $this->client->get($this->domain . "/policy/firewall/ipv4");
+        $outgoingPolicy = $this->outgoingPolicy();
+        $incomingPolicy = $this->incomingPolicy();
 
         $this->logout();
 
-        return $response->json()["result"];
+        $jsonData = [
+            'outgoing' => $outgoingPolicy,
+            'incoming' => $incomingPolicy
+        ];
+
+        return $jsonData;
     }
 
+    // 정책 추가
     public function policyStore($data)
     {
-        $response = $this->client->post($this->domain . "/policy/firewall/ipv4/simple", [$data]);
+        //add access-rule type {outgoing} position 1 name {name} source {Spark} destination {Joon} service {HTTP} action {accept}
+        $script = "add access-rule type {$data['policyType']} position 1 name {$data['name']} source {$data['source']} destination {$data['destination']} service {$data['service']} action {$data['action']}";
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($script)
+        ]);
 
         $this->logout();
 
-        if ($response->failed()) {
+        if ($response->json('output') !== "") {
+            $errorMessage = base64_decode($response->json('output'));
+            throw ValidationException::withMessages([
+                'firewall' => $errorMessage
+            ]);
+        }
+    }
+
+    // 정책 조회
+    public function policyShow($data)
+    {
+        $script = "show access-rule type {$data['policyType']} position {$data['no']}";
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($script)
+        ]);
+
+        $this->logout();
+
+        $decodeData = base64_decode($response->json()['output']);
+
+        $dataArray = $this->textKeyValueToJson($decodeData);
+
+        return $dataArray;
+    }
+
+    public function policyUpdate($data)
+    {
+        $script = "set access-rule type {$data['policyType']} position {$data['no']} source {$data['source']} destination {$data['destination']} service {$data['service']} action {$data['action']}";
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($script)
+        ]);
+
+        $this->logout();
+
+        if ($response->json('output') !== "") {
+            $errorMessage = base64_decode($response->json('output'));
             throw ValidationException::withMessages([
                 'firewall' => $response->json('message')
             ]);
@@ -108,22 +280,20 @@ class FirewallApi extends Model
         return $response->json();
     }
 
-    public function policyShow($data)
+    public function policyEnableDisable($data)
     {
-        $response = $this->client->withBody(json_encode($data), 'application/json')->get($this->domain . "/policy/firewall/ipv4/search");
+        $status = ($data['status'] == 'Enabled') ? 'true' : 'false';
+        $script = "set access-rule type {$data['policyType']} position {$data['no']} disabled {$status}";
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($script)
+        ]);
 
         $this->logout();
 
-        return $response->json()['result'][0];
-    }
-
-    public function policyUpdate($data)
-    {
-        $response = $this->client->put($this->domain . "/policy/firewall/ipv4", [$data]);
-
-        $this->logout();
-
-        if ($response->failed()) {
+        if ($response->json('output') !== "") {
+            $errorMessage = base64_decode($response->json('output'));
             throw ValidationException::withMessages([
                 'firewall' => $response->json('message')
             ]);
@@ -134,13 +304,20 @@ class FirewallApi extends Model
 
     public function policyDestroy($data)
     {
-        $response = $this->client->withBody(json_encode($data), 'application/json')->delete($this->domain . "/policy/firewall/ipv4");
+        Log::info($data);
+        $script = "delete access-rule type {$data['policyType']} position {$data['no']}";
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($script)
+        ]);
 
         $this->logout();
 
-        if ($response->failed()) {
+        if ($response->json('output') !== "") {
+            $errorMessage = base64_decode($response->json('output'));
             throw ValidationException::withMessages([
-                'firewall' => $response->json('message')
+                'firewall' => $errorMessage
             ]);
         }
 
@@ -149,11 +326,19 @@ class FirewallApi extends Model
 
     public function interfaceIndex()
     {
-        $response = $this->client->get($this->domain . "/network/interface/interface");
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($this->script_interface)
+        ]);
 
         $this->logout();
 
-        return $response->json()['result'];
+        $decodeData = base64_decode($response->json()['output']);
+
+        $dataArray = $this->textKeyValueToJsonList($decodeData);
+
+        return $dataArray;
     }
 
     public function interfaceShow($data)
@@ -167,14 +352,20 @@ class FirewallApi extends Model
 
     public function interfaceUpdate($data)
     {
-//        $response = $this->client->put($this->domain . "/network/interface/interface/enable", [$data]);
-        $response = $this->client->withBody(json_encode($data), 'application/json')->put($this->domain . "/network/interface/interface/enable");
+        $status = ($data['status'] == 'off') ? 'on' : 'off';
+        $script = "set interface {$data['name']} state {$status}";
+        $response = $this->client->withHeaders([
+            $this->header_key => $this->token,
+        ])->post($this->domain . "/run-clish-command", [
+            'script' => base64_encode($script)
+        ]);
 
         $this->logout();
 
-        if ($response->failed()) {
+        if ($response->json('output') !== "") {
+            $errorMessage = base64_decode($response->json('output'));
             throw ValidationException::withMessages([
-                'firewall' => $response->json('message')
+                'firewall' => $errorMessage
             ]);
         }
 

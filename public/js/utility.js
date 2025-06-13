@@ -43,12 +43,17 @@ function deleteUtility(url) {
     fetchUtility(url, formData)
 }
 
-function showModal(responseUrl = null) {
+function showModal(responseUrl = null, policyType = null) {
     document.querySelector('.modal-alert').style.display = '';
+
     if (responseUrl) {
         document.getElementById('modal-button').onclick = function () {
             window.location.href = responseUrl;
         };
+    }
+
+    if (policyType) {
+        document.querySelector('.modal-alert').setAttribute('data-policy-type', policyType);
     }
 }
 
@@ -60,8 +65,12 @@ function hideModal() {
     })
 }
 
-function showConfirmModal(url = null) {
+function showConfirmModal(url = null, policyType = null) {
     document.querySelector('.modal-confirm').style.display = '';
+
+    if (policyType) {
+        document.querySelector('.modal-confirm').setAttribute('data-policy-type', policyType);
+    }
 }
 
 function hideConfirmModal() {

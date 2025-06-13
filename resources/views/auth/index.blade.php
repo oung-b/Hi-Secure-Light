@@ -92,7 +92,7 @@
     document.getElementById('submit').addEventListener('click', function (e) {
         e.preventDefault();
         let form = document.getElementById('form');
-        let formData = new FormData(form);
+        let formData = new FormData(form)
         fetchUtility("{{ route('login') }}", formData);
     });
 </script>

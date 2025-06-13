@@ -7,17 +7,22 @@ use App\Http\Requests\PolicyRequest;
 use App\Models\FirewallApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 class FirewallController extends Controller
 {
-    private $urls = ['', 'https://10.0.1.254:50015', 'https://10.0.1.2:50015', 'https://10.0.1.3:50015', 'https://10.0.1.4:50015', 'https://10.0.1.5:50015', 'https://10.0.1.6:50015'];
+    // check-point 방화벽 IP들
+    private $urls = ['https://210.91.170.99:50015'];
+    private $urls_local = ['https://210.91.170.99:4434/web-api'];
 
     public function policy(Request $request)
     {
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $items = $firewallApi->policyIndex();
+        $policies = $firewallApi->policyIndex();
 
-        return view('user.quick-function.policy.policy_control')->with('items', $items);
+        return view('user.quick-function.policy.policy_control')
+            ->with('outgoingPolicies', $policies['outgoing'])
+            ->with('incomingPolicies', $policies['incoming']);
     }
 
     public function policyCreate()
@@ -39,17 +44,14 @@ class FirewallController extends Controller
     public function policyEdit(Request $request)
     {
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $policy = $firewallApi->policyShow(['rule_id' => $request->segment(4)]);
+        $policy = $firewallApi->policyShow(['no' => $request->segment(5), 'policyType' => $request->segment(4)]);
 
         return view('user.quick-function.policy.policy_control_modify')->with('policy', $policy);
     }
 
     public function policyUpdate(PolicyPatchRequest $request)
     {
-        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $policy = $firewallApi->policyShow(['rule_id' => $request->segment(4)]);
-
-        $validated = array_merge($policy, $request->validated());
+        $validated = $request->validated();
 
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
         $firewallApi->policyUpdate($validated);
@@ -59,12 +61,14 @@ class FirewallController extends Controller
 
     public function policyEnable(Request $request)
     {
-        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $policy = $firewallApi->policyShow(['rule_id' => $request->segment(4)]);
-        $policy['enable'] = ($policy['enable'] == 1) ? 0 : 1;
+        $data = [
+            'policyType' => $request->segment(4),
+            'no' => $request->segment(5),
+            'status' => $request->segment(6),
+        ];
 
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $firewallApi->policyUpdate($policy);
+        $firewallApi->policyEnableDisable($data);
 
         return redirect()->route('firewall.policy', $request->segment(3));
     }
@@ -72,7 +76,7 @@ class FirewallController extends Controller
     public function policyDestroy(Request $request)
     {
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $firewallApi->policyDestroy(['index' => $request->segment(4), 'rule_id' => $request->segment(5)]);
+        $firewallApi->policyDestroy(['policyType' => $request->segment(4), 'no' => $request->segment(5)]);
 
         return redirect()->route('firewall.policy', $request->segment(3));
     }
@@ -80,23 +84,20 @@ class FirewallController extends Controller
     public function interface(Request $request)
     {
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $items = $firewallApi->interfaceIndex();
+        $interfaces = $firewallApi->interfaceIndex();
 
-        $enables = array_column(array_filter($items, function($item) {
-            return $item['interface_up_down_enable'] == 1;
-        }), 'name');
+        Log::info($interfaces);
 
-        return view('user.quick-function.interface.interface_control')->with('items', $items)->with('enables', $enables);
+        return view('user.quick-function.interface.interface_control')->with('interfaces', $interfaces);
     }
 
     public function interfaceEnable(Request $request)
     {
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $interface = $firewallApi->interfaceShow(['name' => $request->segment(4)]);
-        $interface['interface_up_down_enable'] = ($interface['interface_up_down_enable'] == 1) ? 0 : 1;
-
-        $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
-        $firewallApi->interfaceUpdate($interface);
+        $firewallApi->interfaceUpdate([
+            'name' => $request->segment(4),
+            'status' => $request->segment(5),
+        ]);
 
         return redirect()->route('firewall.interface', $request->segment(3));
     }
@@ -107,6 +108,12 @@ class FirewallController extends Controller
      */
     private function getUrl(array $path): string
     {
-        return $this->urls[Str::after($path[2], 'fw')];
+        $fwIndex = Str::after($path[2], 'fw');
+
+        if (config('app.env') === 'local') {
+            return $this->urls_local[$fwIndex-1];
+        }
+
+        return $this->urls[$fwIndex-1];
     }
 }
