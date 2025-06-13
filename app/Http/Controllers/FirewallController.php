@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Log;
 class FirewallController extends Controller
 {
     // check-point 방화벽 IP들
-    private $urls = ['https://210.91.170.99:50015'];
-    private $urls_local = ['https://210.91.170.99:4434/web-api'];
+    private $urls = ['https://210.91.170.99:4434/web-api'];
 
     public function policy(Request $request)
     {
@@ -109,10 +108,6 @@ class FirewallController extends Controller
     private function getUrl(array $path): string
     {
         $fwIndex = Str::after($path[2], 'fw');
-
-        if (config('app.env') === 'local') {
-            return $this->urls_local[$fwIndex-1];
-        }
 
         return $this->urls[$fwIndex-1];
     }
