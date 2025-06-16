@@ -27,7 +27,7 @@ class FirewallApi extends Model
 
     protected $token;
 
-    protected $domain = "https://118.130.110.156:40012";
+    protected $domain = "https://210.91.170.99:4434/web-api";
 
     public function __construct(array $attributes = [], $domain = null)
     {

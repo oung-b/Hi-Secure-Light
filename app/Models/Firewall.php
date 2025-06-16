@@ -28,7 +28,7 @@ class Firewall extends Model
             ],
         ]);
 
-        $this->domain = config("app.env") === "production" ? "https://10.0.1.251:58005" : "https://118.130.110.156:40007";
+        $this->domain = config("app.env") === "production" ? "https://10.0.1.251:58005" : "https://210.91.170.99:40007";
     }
 
     public function getCountMalware()

@@ -1,8 +1,8 @@
 var ipsChart = null;
 var cncChart = null;
 
-// window.domain = "https://localhost:8443";
-window.domain = "https://210.91.170.99:8443";
+// window.domain = "http://127.0.0.1:8000";
+// window.domain = "https://210.91.170.99:8443";
 // window.domain = "http://hi-secure.ufeed.co.kr";
 
 document.oncontextmenu = function () {
@@ -160,7 +160,7 @@ $(document).ready(function(){
     }
 
     function getDashboard() {
-        axios.get(window.domain + "/api/firewalls/dashboard")
+        axios.get("/api/firewalls/dashboard")
             .then(response => {
                 // # START : Traffic 차트
                 var traffics = response.data.data.traffics;
@@ -230,6 +230,7 @@ $(document).ready(function(){
     var realTimeTrafficChart = null;
 
     function drawChart(deviceTraffics) {
+        console.log(deviceTraffics);
         var colors = [
             "#502ecf",
             "#359832",
@@ -248,8 +249,6 @@ $(document).ready(function(){
         var firstDeviceTraffic = deviceTraffics[0];
 
         var datasets = deviceTraffics.map((deviceTraffic, index) => {
-
-
             return {
                 label: deviceTraffic.device.title,
                 data: deviceTraffic.traffics.map(traffic => Math.floor(parseInt(traffic.byte) / 1024)),
