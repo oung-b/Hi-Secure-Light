@@ -12,7 +12,7 @@
         <!-- //상단 헤더 -->
 
         <!-- 좌측 메뉴 -->
-        <div id="dashboard_gnb">
+        <div id="gnb">
             @include('user.components.dashboard_detail_gnb', [
             'counts' => $counts,
             'countsByDates' => $countsByDates,
