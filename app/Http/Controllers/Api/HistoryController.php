@@ -11,6 +11,7 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class HistoryController extends ApiController
 {
@@ -68,6 +69,8 @@ class HistoryController extends ApiController
             ->get();*/
 
         $devices = Device::get();
+
+        Log::info($devices);
 
         foreach($devices as $device){
             /*if($device->title == "FW#2" || $device->title == "FW#3" || $device->title == "FW#4" || $device->title == "FW#5" || $device->title == "FW#6")

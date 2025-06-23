@@ -230,7 +230,6 @@ $(document).ready(function(){
     var realTimeTrafficChart = null;
 
     function drawChart(deviceTraffics) {
-        console.log(deviceTraffics);
         var colors = [
             "#502ecf",
             "#359832",

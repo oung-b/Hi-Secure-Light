@@ -7,7 +7,6 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 
 class History extends Model
 {
@@ -45,8 +44,6 @@ class History extends Model
         ]);
 
         $body = $response->json();
-
-        Log::info($body);
 
         if($body){
             $items = $body[""];
