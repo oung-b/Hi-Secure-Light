@@ -43,6 +43,7 @@ class HistoryController extends ApiController
         $trafficDevices = Device::whereIn("title", ["FW#1", "FW#2", "FW#3", "FW#4", "FW#5", "FW#6"])->get();
 
         foreach($trafficDevices as $device){
+            Log::info('Device:', $device->toArray());
             $realTimeTraffics[] = [
                 "device" => $device,
                 "traffics" => [
@@ -93,11 +94,6 @@ class HistoryController extends ApiController
             "realTimeTraffics" => $realTimeTraffics,
             "rankingTraffics" => $rankingTraffics,
         ];
-
-        // 각 데이터의 내용을 세세하게 로그로 기록
-        Log::info('Devices:', $devices->toArray());
-        Log::info('Real-Time Traffics:', $realTimeTraffics);
-        Log::info('Ranking Traffics:', $rankingTraffics);
 
         return $this->respondSuccessfully($returnData);
     }
