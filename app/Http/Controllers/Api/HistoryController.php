@@ -111,7 +111,7 @@ class HistoryController extends ApiController
 
         $byte = $device->histories()
             // ->whereBetween('logged_at', [ Carbon::make($datetime)->subHours(3), Carbon::make($datetime)])
-            ->where("sensor", "LIKE", "%"."eth8"."%")
+            // ->where("sensor", "LIKE", "%"."eth8"."%")
             ->where('logged_at', ">=", Carbon::make($datetime)->subMinutes(5)->setSecond(0)->setMillisecond(0))
             ->where('logged_at', "<", Carbon::make($datetime)->setSecond(0)->setMillisecond(0))
             ->average("byte");
