@@ -41,7 +41,7 @@ class Device extends Model
 
     public static function record()
     {
-        $responseCPU = Http::withoutVerifying()->get("http://localhost:8888/api/table.json", [
+        $responseCPU = Http::withoutVerifying()->get("http://localhost:8080/api/table.json", [
             "page" => 1,
             "username" => "manager",
             "password" => "hgs_1qa@WS",
