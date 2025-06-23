@@ -138,7 +138,7 @@
             Quick Function
         </div>
         <div class="gnb-menu-list row-group">
-            @if(auth()->user()->authority_id === 1)
+            {{-- @if(auth()->user()->authority_id === 1)
             <div class="gnb-menu">
                 <div class="gnb-menu-title col-group">
                     Security Control
@@ -160,7 +160,7 @@
                     </div>
                 </div>
             </div>
-            @endif
+            @endif --}}
 
             <div class="gnb-menu">
                 <div class="gnb-menu-title col-group">

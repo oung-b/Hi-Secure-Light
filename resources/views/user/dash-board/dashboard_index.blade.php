@@ -226,7 +226,7 @@
                                 System Zone
                             </p>
                         </a>
-                        <div class="device-item up" style="top: 600px; left: 600px;">
+                        {{-- <div class="device-item up" style="top: 600px; left: 600px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_server.png" alt="">
                             <p class="device-item-title main">
@@ -239,7 +239,7 @@
                             <p class="device-item-title main">
                                 NAC Sensor
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>

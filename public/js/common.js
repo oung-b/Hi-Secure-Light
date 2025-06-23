@@ -328,7 +328,8 @@ $(document).ready(function(){
     }
 
     // 대시보드 페이지에서만 실행
-    if (window.location.pathname.includes('/dash-board')) {
+    // if (window.location.pathname.includes(['/dash-board', '/hi-secure'])) {
+    if (['/dash-board', '/hi-secure'].some(path => window.location.pathname.includes(path))) {
         getHistories();
         getDashboard();
 

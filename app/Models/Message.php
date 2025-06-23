@@ -19,7 +19,7 @@ class Message extends Model
     {
         parent::__construct($attributes);
 
-        $this->domain = config("app.env") === "local" ? "http://118.130.110.156:8080" : "http://localhost:8888";
+        $this->domain = config("app.env") === "local" ? "http://210.91.170.99:8080" : "http://10.0.1.252:8888";
     }
 
     public function device()

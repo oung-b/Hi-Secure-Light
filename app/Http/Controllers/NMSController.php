@@ -11,7 +11,7 @@ class NMSController extends Controller
 
     public function __construct()
     {
-        $this->domain = config("app.env") === "local" ? "http://121.141.225.29:8080" : "http://localhost:8080";
+        $this->domain = config("app.env") === "local" ? "http://210.91.170.99:8080" : "http://10.0.1.252:8080";
     }
 
     public function devices()
