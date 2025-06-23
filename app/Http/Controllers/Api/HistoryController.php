@@ -70,8 +70,6 @@ class HistoryController extends ApiController
 
         $devices = Device::get();
 
-        Log::info($devices);
-
         foreach($devices as $device){
             /*if($device->title == "FW#2" || $device->title == "FW#3" || $device->title == "FW#4" || $device->title == "FW#5" || $device->title == "FW#6")
                 $device->status = "Down";*/
@@ -89,13 +87,19 @@ class HistoryController extends ApiController
 
         usort($rankingTraffics, function($a, $b) {return $b["byte"] - $a["byte"];});
 
-        return $this->respondSuccessfully([
+        $returnData = [
             "devices" => $devices,
             // "realTimeNotifications" => $realTimeNotifications,
             "realTimeTraffics" => $realTimeTraffics,
             "rankingTraffics" => $rankingTraffics,
-        ]);
+        ];
+
+        // 리턴 데이터를 로그로 기록
+        Log::info('Response Data:', $returnData);
+
+        return $this->respondSuccessfully($returnData);
     }
+
     public function getByte($device, $datetime)
     {
         /*$history = $device->histories()
