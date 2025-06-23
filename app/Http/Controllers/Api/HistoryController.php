@@ -94,10 +94,10 @@ class HistoryController extends ApiController
             "rankingTraffics" => $rankingTraffics,
         ];
 
-        // 리턴 데이터를 로그로 기록
-        Log::info('devices', $returnData["devices"]);
-        Log::info('realTimeTraffics', $returnData["realTimeTraffics"]);
-        Log::info('rankingTraffics', $returnData["rankingTraffics"]);
+        // 각 데이터의 내용을 세세하게 로그로 기록
+        Log::info('Devices:', $devices->toArray());
+        Log::info('Real-Time Traffics:', $realTimeTraffics);
+        Log::info('Ranking Traffics:', $rankingTraffics);
 
         return $this->respondSuccessfully($returnData);
     }
