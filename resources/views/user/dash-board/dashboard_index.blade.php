@@ -110,6 +110,11 @@
                             Down
                         </div>
                     </div>
+
+                    <div class="col-group">
+                        <label for="fileInput" style="margin-top: 30px; background-color: #4CAF50; color: white; padding: 10px; border-radius: 5px;">Inventory List</label>
+                        <input type="file" id="fileInput" style="display: none;">
+                    </div>
                 </div>
 
                 <div class="dashboard-content-wrap">

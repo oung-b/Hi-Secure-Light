@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class Message extends Model
 {
@@ -103,6 +104,8 @@ class Message extends Model
                 "datetime_raw" => $message["datetime_raw"],
             ]);
         }
+
+        Log::info("Message recorded successfully");
     }
 
 }
