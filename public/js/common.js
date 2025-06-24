@@ -332,7 +332,7 @@ $(document).ready(function(){
         setInterval(() => {
             getHistories();
             getDashboard();
-        }, 10000);
+        }, 60000);
     }
 
 

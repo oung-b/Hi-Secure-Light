@@ -196,31 +196,19 @@
                                 Hi-Secure
                             </p>
                         </div>
-                        <div data-id="DMZ" class="device-item up"
+                        {{-- <div data-id="DMZ" class="device-item up"
                            style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
-{{--                            <p class="device-item-zone">--}}
-{{--                                FW#4--}}
-{{--                            </p>--}}
+                            <p class="device-item-zone">
+                                FW#4
+                            </p>
                             <p class="device-item-title main">
                                 DMZ Zone
                             </p>
-                        </div>
+                        </div> --}}
                         <div data-id="IC" class="device-item up"
                            style="top: 200px; left: 800px;">
-                            <div class="state"></div>
-                            <img src="/images/dashboard_icon_firewall.png" alt="">
-{{--                            <p class="device-item-zone">--}}
-{{--                                FW#5--}}
-{{--                            </p>--}}
-                            <p class="device-item-title main">
-                                Internal <br>
-                                Comm Zone
-                            </p>
-                        </div>
-                        <div data-id="FW#4" class="device-item up"
-                           style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
@@ -228,6 +216,17 @@
                             </p>
                             <p class="device-item-title main">
                                 Control & Monitoring System Zone
+                            </p>
+                        </div>
+                        <div data-id="FW#4" class="device-item up"
+                           style="top: 400px; left: 800px;">
+                            <div class="state"></div>
+                            <img src="/images/dashboard_icon_firewall.png" alt="">
+                            <p class="device-item-zone">
+                                FW#5
+                            </p>
+                            <p class="device-item-title main">
+                                Navigation & Communication Zone
                             </p>
                         </div>
                         {{-- <div class="device-item up" style="top: 600px; left: 600px;">
