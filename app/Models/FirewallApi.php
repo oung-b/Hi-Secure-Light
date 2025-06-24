@@ -350,8 +350,15 @@ class FirewallApi extends Model
 
     public function interfaceUpdate($data)
     {
-        $status = ($data['status'] == 'off') ? 'on' : 'off';
-        $script = "set interface {$data['name']} state {$status}";
+        $script = '';
+        if ($data['name'] !== 'WAN') {
+            $status = ($data['status'] == 'off') ? 'on' : 'off';
+            $script = "set interface {$data['name']} state {$status}";
+        } else {
+            $status = ($data['status'] == 'off') ? 'enable' : 'disable';
+            $script = "set internet-connection {$data['name']} {$status}";
+        }
+
         $response = $this->client->withHeaders([
             $this->header_key => $this->token,
         ])->post($this->domain . "/run-clish-command", [
