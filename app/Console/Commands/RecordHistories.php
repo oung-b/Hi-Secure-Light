@@ -34,6 +34,8 @@ class RecordHistories extends Command
      */
     public function handle()
     {
+        Device::record();
+        
         History::record();
 
         History::recordPing();
