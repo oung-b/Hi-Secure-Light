@@ -7,7 +7,6 @@ use App\Http\Requests\PolicyRequest;
 use App\Models\FirewallApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Log;
 
 class FirewallController extends Controller
 {
@@ -85,8 +84,6 @@ class FirewallController extends Controller
     {
         $firewallApi = new FirewallApi([], $this->getUrl($request->segments()));
         $interfaces = $firewallApi->interfaceIndex();
-
-        Log::info($interfaces);
 
         return view('user.quick-function.interface.interface_control')->with('interfaces', $interfaces);
     }

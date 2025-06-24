@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\Log;
 
 class FirewallApi extends Model
 {
@@ -304,7 +303,6 @@ class FirewallApi extends Model
 
     public function policyDestroy($data)
     {
-        Log::info($data);
         $script = "delete access-rule type {$data['policyType']} position {$data['no']}";
         $response = $this->client->withHeaders([
             $this->header_key => $this->token,
