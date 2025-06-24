@@ -6,6 +6,7 @@ use App\Enums\DeviceStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class Device extends Model
 {
@@ -50,6 +51,8 @@ class Device extends Model
             "columns" => "device,sensor, objid, lastvalue, value, name,datetime,message,status",
             "filter_name" => "CPU Load",
         ]);
+
+        Log::info('API Response:', (array) $responseCPU->object());
 
         foreach ($responseCPU->object()->{''} as $item) {
             if ($item->value_raw !== '') {
