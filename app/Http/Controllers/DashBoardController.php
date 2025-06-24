@@ -16,14 +16,6 @@ class DashBoardController extends Controller
     {
         $messages = Message::orderBy("datetime", "desc")->whereIn("status", ["Up", "Down", "Unusual", "Warning"])->take(100)->get();
 
-        // 대시보드 메시지 로그 출력
-        Log::info("Dashboard Messages Query", [
-            'total_messages_count' => Message::count(),
-            'filtered_messages_count' => $messages->count(),
-            'status_filter' => ["Up", "Down", "Unusual", "Warning"],
-            'messages_data' => $messages->toArray()
-        ]);
-
         return view('user.dash-board.dashboard_index', [
             "messages" => $messages
         ]);
