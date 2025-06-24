@@ -67,6 +67,7 @@ class Message extends Model
 
         foreach($messages as $message){
             $device = Device::where("title", $message["device_raw"])->first();
+            
 
             $message["datetime"] = Carbon::make($message["datetime"])->format("Y-m-d H:i");
 

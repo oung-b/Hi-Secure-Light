@@ -53,7 +53,6 @@ class History extends Model
                 $device = \App\Models\Device::where("title", $item["device_raw"])->first();
 
                 if($device) {
-                    Log::info('Device Status:', ['status' => $item["status"]]);
                     $history = \App\Models\History::create([
                         "device_id" => $device->id,
                         "message" => $item["message_raw"],
@@ -85,8 +84,10 @@ class History extends Model
         foreach ($responsePing->object()->{''} as $item) {
             $device = Device::where("title", $item->device_raw)->first();
 
-            if($device && $item->status)
+            if($device && $item->status) {
+                Log::info($item->status);
                 $device->update(["status" => $item->status]);
+            }
         }
     }
 }
