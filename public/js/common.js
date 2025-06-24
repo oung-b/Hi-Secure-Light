@@ -165,7 +165,6 @@ $(document).ready(function(){
                 // # START : Traffic 차트
                 var traffics = response.data.data.traffics;
 
-
                 $(".dashboard-table-traffic tbody").html("");
 
                 traffics.map(traffic => {
@@ -179,7 +178,6 @@ $(document).ready(function(){
                 });
                 // # END : Traffic 차트
 
-
                 // # START : 대시보드 상단 CBS Protection 차트
                 var counts = response.data.data;
 
@@ -191,7 +189,6 @@ $(document).ready(function(){
                     countsWrapArr[2].querySelector('.num').innerText = counts.count_ips;
                 }
                 // # END : 대시보드 상단 CBS Protection 차트
-
 
                 // # START : IPS / Anti-Virus / C&C 좌측 하단 차트 그리기 ===============================
                 //polar-area-chart tab
@@ -230,7 +227,6 @@ $(document).ready(function(){
     var realTimeTrafficChart = null;
 
     function drawChart(deviceTraffics) {
-        console.log(deviceTraffics);
         var colors = [
             "#502ecf",
             "#359832",
