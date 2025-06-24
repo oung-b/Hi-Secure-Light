@@ -5,7 +5,7 @@
 	<!-- <div class="header-top-wrap row-group"> -->
     <div class="header-top-wrap">
 		<a href="{{ route('dash-board.index') }}">
-			<img src="/images/logo_hd.png" alt="" class="logo">
+			<img src="/images/hi_secure_logo_hd.png" alt="" class="logo">
 		</a>
 		<!-- <button class="header-gnb-btn" type="button">
 			<i class="xi-hamburger-out"></i>
