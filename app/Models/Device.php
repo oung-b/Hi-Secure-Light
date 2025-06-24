@@ -52,21 +52,7 @@ class Device extends Model
             "filter_name" => "Ping",
         ]);
 
-        // API 응답 로그 출력
-        Log::info("API Response for CPU Load", [
-            'response_body' => $responseCPU->json(),
-            'status_code' => $responseCPU->status()
-        ]);
-
         foreach ($responseCPU->object()->{''} as $item) {
-            // 각 아이템의 상세 로그 출력
-            Log::info("Device CPU Load Update", [
-                'device_title' => $item->device_raw,
-                'cpu_value' => $item->value_raw,
-                'api_status' => $item->status ?? 'null',
-                'full_item' => $item
-            ]);
-
             Device::updateOrCreate(
                 ['title' => $item->device_raw],
                 ['title' => $item->device_raw, 'cpu_load_value' => $item->value_raw ?: 0]
