@@ -30,6 +30,7 @@ $(document).ready(function(){
     function getHistories() {
         axios.get("/api/histories")
             .then(response => {
+                console.log(response.data.data);
                 var devices = response.data.data.devices;
                 // var realTimeNotifications = response.data.data.realTimeNotifications;
                 var realTimeTraffics = response.data.data.realTimeTraffics;
