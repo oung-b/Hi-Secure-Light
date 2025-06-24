@@ -53,6 +53,7 @@ class History extends Model
                 $device = \App\Models\Device::where("title", $item["device_raw"])->first();
 
                 if($device) {
+                    Log::info('Device Status:', ['status' => $item["status"]]);
                     $history = \App\Models\History::create([
                         "device_id" => $device->id,
                         "message" => $item["message_raw"],
