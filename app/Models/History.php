@@ -81,8 +81,22 @@ class History extends Model
             "filter_name" => "Ping",
         ]);
 
+        // API 응답 로그 출력
+        Log::info("API Response for Ping", [
+            'response_body' => $responsePing->json(),
+            'status_code' => $responsePing->status()
+        ]);
+
         foreach ($responsePing->object()->{''} as $item) {
             $device = Device::where("title", $item->device_raw)->first();
+
+            // 각 아이템의 상태 로그 출력
+            Log::info("Device Status Update", [
+                'device_title' => $item->device_raw,
+                'api_status' => $item->status,
+                'device_found' => $device ? true : false,
+                'full_item' => $item
+            ]);
 
             if($device && $item->status) {
                 $device->update(["status" => $item->status]);
