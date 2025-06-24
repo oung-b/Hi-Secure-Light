@@ -119,7 +119,7 @@
                         </video>
 {{--                        <img class="bg-video" src="/images/main_dashboard_bg_line.png" alt="" srcset="">--}}
 
-                        <a href="{{ route('icms') }}" data-id="FW#2" class="device-item up"
+                        <div data-id="FW#2" class="device-item up"
                            style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -127,11 +127,11 @@
                                 FW#2
                             </p>
                             <p class="device-item-title main">
-                                ICMS Zone
+                                Maintenance Zone
                             </p>
-                        </a>
+                        </div>
 
-                        <a href="{{ route('propulsion') }}" data-id="FW#3" class="device-item up"
+                        <div data-id="FW#3" class="device-item up"
                            style="top: 400px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -141,7 +141,7 @@
                             <p class="device-item-title main">
                                 Propulsion Zone
                             </p>
-                        </a>
+                        </div>
 
                         <div class="device-item up" data-id="FW1" style="top: 200px; left: 400px;">
                             <div class="state"></div>
@@ -150,7 +150,7 @@
                                 FW#1
                             </p>
                             <p class="device-item-title main">
-                                Remote Zone
+                                EnterPrise Zone
                             </p>
                         </div>
 
@@ -191,7 +191,7 @@
                                 Hi-Secure
                             </p>
                         </div>
-                        <a href="{{ route('dmz') }}" data-id="DMZ" class="device-item up"
+                        <div data-id="DMZ" class="device-item up"
                            style="top: 0; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -201,8 +201,8 @@
                             <p class="device-item-title main">
                                 DMZ Zone
                             </p>
-                        </a>
-                        <a href="{{ route('internal-comm') }}" data-id="IC" class="device-item up"
+                        </div>
+                        <div data-id="IC" class="device-item up"
                            style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -213,8 +213,8 @@
                                 Internal <br>
                                 Comm Zone
                             </p>
-                        </a>
-                        <a href="{{ route('navigation-radio') }}" data-id="FW#4" class="device-item up"
+                        </div>
+                        <div data-id="FW#4" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -222,10 +222,9 @@
                                 FW#4
                             </p>
                             <p class="device-item-title main">
-                                Navigation & Radio <br>
-                                System Zone
+                                Control & Monitoring System Zone
                             </p>
-                        </a>
+                        </div>
                         {{-- <div class="device-item up" style="top: 600px; left: 600px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_server.png" alt="">
