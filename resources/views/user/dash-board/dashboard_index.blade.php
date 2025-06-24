@@ -182,13 +182,13 @@
 {{--                                Client PC--}}
 {{--                            </p>--}}
 {{--                        </div>--}}
-                        <div class="device-item up" data-id="TMS" style="top: 600px; left: 200px">
+                        {{-- <div class="device-item up" data-id="TMS" style="top: 600px; left: 200px">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_server.png" alt="">
                             <p class="device-item-title main">
                                 TMS
                             </p>
-                        </div>
+                        </div> --}}
                         <div class="device-item up" style="top: 600px; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_server.png" alt="">
@@ -207,7 +207,7 @@
                                 DMZ Zone
                             </p>
                         </div> --}}
-                        <div data-id="IC" class="device-item up"
+                        <div data-id="FW#4" class="device-item up"
                            style="top: 200px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -218,7 +218,7 @@
                                 Control & Monitoring System Zone
                             </p>
                         </div>
-                        <div data-id="FW#4" class="device-item up"
+                        <div data-id="FW#5" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
