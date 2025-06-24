@@ -230,6 +230,7 @@ $(document).ready(function(){
     var realTimeTrafficChart = null;
 
     function drawChart(deviceTraffics) {
+        console.log(deviceTraffics);
         var colors = [
             "#502ecf",
             "#359832",
@@ -411,7 +412,6 @@ $(document).ready(function(){
                 $(".blocked-devices-wrap tbody").html("");
 
                 items.map(item => {
-                    console.log(item);
                     $(".blocked-devices-wrap tbody").append(`<tr>
 <td>${item.NL_SIFNAME}</td>
 <td>${item.NL_IPSTR}</td>
