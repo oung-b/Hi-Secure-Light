@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Enums\State;
 use App\Models\History;
 use App\Models\Message;
+use App\Models\Device;
 use App\Models\PreProduct;
 use App\Models\RemoteLog;
 use App\Models\StatusHistory;
@@ -35,7 +36,7 @@ class RecordHistories extends Command
     public function handle()
     {
         Device::record();
-        
+
         History::record();
 
         History::recordPing();
