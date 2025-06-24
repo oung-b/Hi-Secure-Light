@@ -69,7 +69,7 @@ class Device extends Model
 
             Device::updateOrCreate(
                 ['title' => $item->device_raw],
-                ['title' => $item->device_raw, 'cpu_load_value' => $item->value_raw]
+                ['title' => $item->device_raw, 'cpu_load_value' => $item->value_raw ?: 0]
             );
         }
     }
