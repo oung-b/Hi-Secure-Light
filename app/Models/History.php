@@ -85,7 +85,6 @@ class History extends Model
             $device = Device::where("title", $item->device_raw)->first();
 
             if($device && $item->status) {
-                Log::info($item->status);
                 $device->update(["status" => $item->status]);
             }
         }
