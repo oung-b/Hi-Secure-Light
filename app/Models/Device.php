@@ -49,7 +49,7 @@ class Device extends Model
             "password" => "hgs_1qa@WS",
             "content" => "",
             "columns" => "device,sensor, objid, lastvalue, value, name,datetime,message,status",
-            "filter_name" => "CPU Load",
+            "filter_name" => "Ping",
         ]);
 
         // API 응답 로그 출력
