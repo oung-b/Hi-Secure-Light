@@ -67,12 +67,10 @@ class Device extends Model
                 'full_item' => $item
             ]);
 
-            if ($item->value_raw !== '') {
-                Device::updateOrCreate(
-                    ['title' => $item->device_raw],
-                    ['title' => $item->device_raw, 'cpu_load_value' => $item->value_raw]
-                );
-            }
+            Device::updateOrCreate(
+                ['title' => $item->device_raw],
+                ['title' => $item->device_raw, 'cpu_load_value' => $item->value_raw]
+            );
         }
     }
 
