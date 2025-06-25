@@ -122,7 +122,7 @@
                         {{-- <video class="bg-video" autoplay muted loop>
                             <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>
                         </video> --}}
-                       <img class="bg-video" src="/images/dashboard__line.png" alt="" srcset="">
+                       <img class="bg-video" src="/images/dashboard_bg_line.png" alt="" srcset="">
 
                         <div data-id="FW#2" class="device-item up"
                            style="top: 200px; left: 0;">
