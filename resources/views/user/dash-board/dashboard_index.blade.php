@@ -124,7 +124,7 @@
                         </video> --}}
                        <img class="bg-video" src="/images/dashboard_bg_line.png" alt="" srcset="">
 
-                       <a href="{{ route('icms') }}" data-id="FW#2" class="device-item up"
+                       <a href="{{ route('maintenance-zone') }}" data-id="FW#2" class="device-item up"
                            style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">

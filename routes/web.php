@@ -79,7 +79,7 @@ Route::middleware(['auth', 'two.factor'])->group(function () {
     Route::prefix('dash-board')->group(function () {
         Route::get('/', [\App\Http\Controllers\DashBoardController::class, 'index'])->name('dash-board.index');
 //        Route::get('/security-monitoring', [\App\Http\Controllers\DashBoardController::class, 'securityMonitoring'])->name('security-monitoring');
-        Route::get('/icms', [\App\Http\Controllers\DashBoardController::class, 'icmsZone'])->name('icms');
+        Route::get('/maintenance-zone', [\App\Http\Controllers\DashBoardController::class, 'maintenanceZone'])->name('maintenance-zone');
         Route::get('/propulsion', [\App\Http\Controllers\DashBoardController::class, 'propulsionZone'])->name('propulsion');
         Route::get('/dmz', [\App\Http\Controllers\DashBoardController::class, 'dmzZone'])->name('dmz');
         Route::get('/internal-comm', [\App\Http\Controllers\DashBoardController::class, 'InternalCommZone'])->name('internal-comm');

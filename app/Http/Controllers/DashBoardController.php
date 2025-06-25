@@ -174,14 +174,11 @@ class DashBoardController extends Controller
         ];
     }
 
-    public function icmsZone()
+    public function maintenanceZone()
     {
         $childDevices = [
-            Device::where("title", "FW#1")->first(),
-            Device::where("title", "FW#2")->first(),
-            Device::where("title", "FW#3")->first(),
-            Device::where("title", "FW#4")->first(),
-            Device::where("title", "FW#5")->first(),
+            Device::where("title", "ISS MINI PC")->first(),
+            Device::where("title", "HI-NAS")->first()
         ];
 
         // null인 디바이스들을 필터링
