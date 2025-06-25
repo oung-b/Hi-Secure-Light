@@ -13,7 +13,11 @@
 
         <!-- 좌측 메뉴 -->
         <div id="gnb">
-            @include('user.components.dashboard_detail_gnb_sample')
+            @include('user.components.dashboard_detail_gnb', [
+            'counts' => $counts,
+            'countsByDates' => $countsByDates,
+            'totalDevices' => $totalDevices,
+            ])
         </div>
         <!-- //좌측 메뉴 -->
     </div>
@@ -27,7 +31,7 @@
                     <i class="xi-arrow-left"></i>
                 </a>
                 <h2 class="dashboard-detail-title">
-                    Integrated Control and Monitoring System Zone
+                    Maintenance Zone
                 </h2>
             </div>
 
@@ -43,7 +47,7 @@
                                 <div class="state"></div>
                                 <img src="/images/dashboard_icon_firewall.png" alt="">
                                 <p class="device-item-title main">
-                                    ICMS Zone
+                                    Maintenance Zone
                                 </p>
                             </div>
                         </div>
@@ -95,7 +99,7 @@
         </button>
         <div class="device-detail-title-wrap">
             <p class="before">
-                ICMS Zone
+                Maintenance Zone
             </p>
             <i class="xi-angle-right"></i>
             <p class="now">
