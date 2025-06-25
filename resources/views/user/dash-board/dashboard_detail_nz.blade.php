@@ -105,11 +105,13 @@
 
         <div class="device-detail-group">
             @foreach($totalDevices[0]["childDevices"] as $device)
-            <div class="device-detail-item device-item {{strtolower($device["status"])}}">
-                <div class="state"></div>
-                <img src="/images/dashboard_icon_server.png" alt="">
-                <h3 class="device-detail-item-title">{{ $device["title"] }}</h3>
-            </div>
+                @if($device !== null)
+                <div class="device-detail-item device-item {{strtolower($device->status)}}">
+                    <div class="state"></div>
+                    <img src="/images/dashboard_icon_server.png" alt="">
+                    <h3 class="device-detail-item-title">{{ $device->title }}</h3>
+                </div>
+                @endif
             @endforeach
         </div>
     </div>

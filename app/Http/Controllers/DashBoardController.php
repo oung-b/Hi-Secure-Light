@@ -140,6 +140,10 @@ class DashBoardController extends Controller
 
         foreach($totalDevices as $index => $device){
             foreach($device["childDevices"] as $childDevice){
+                if($childDevice === null) {
+                    continue;
+                }
+
                 if($childDevice->status != "Up") {
                     $device["count_wrong"] += 1;
 
@@ -172,17 +176,25 @@ class DashBoardController extends Controller
 
     public function icmsZone()
     {
+        $childDevices = [
+            Device::where("title", "FW#1")->first(),
+            Device::where("title", "FW#2")->first(),
+            Device::where("title", "FW#3")->first(),
+            Device::where("title", "FW#4")->first(),
+            Device::where("title", "FW#5")->first(),
+        ];
+
+        // null인 디바이스들을 필터링
+        $childDevices = array_filter($childDevices, function($device) {
+            return $device !== null;
+        });
+
         $totalDevices = [
             [
                 "title" => "ICMS System",
                 "count_wrong" => 0,
                 "status" => "Up",
-                "childDevices" => [
-                    Device::where("title", "SW#1")->first(),
-                    Device::where("title", "SW#2")->first(),
-                    Device::where("title", "OWS1")->first(),
-                    Device::where("title", "OWS2")->first(),
-                ]
+                "childDevices" => array_values($childDevices) // 인덱스 재정렬
             ]
         ];
 
