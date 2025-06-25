@@ -97,7 +97,7 @@
                                 Inventory Log
                             </div>
                         </a> --}}
-                        <a href="{{ route('log.system-log') }}" class="sub-gnb-menu">
+                        {{-- <a href="{{ route('log.system-log') }}" class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 System Log
                             </div>
@@ -106,7 +106,7 @@
                             <div class="sub-gnb-menu-title col-group">
                                 Remote Log
                             </div>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             @endif
