@@ -231,7 +231,7 @@ Route::middleware("guest")->group(function(){
 
 
 Route::middleware("auth")->group(function(){
-    Route::get("/logout", [\App\Http\Controllers\UserController::class, "logout"]);
+//    Route::get("/logout", [\App\Http\Controllers\UserController::class, "logout"]);
     Route::get("/mypage", [\App\Http\Controllers\PageController::class, "mypage"]);
 });
 

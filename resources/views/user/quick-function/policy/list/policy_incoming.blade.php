@@ -1,6 +1,8 @@
 <!-- incoming policy -->
 @if(Auth::user()->authority_id === 1)
 <div class="subpage-table-btn-wrap col-group">
+    <div style="color: red; font-size: 30px; text-align: left; margin-left: 0; margin-right: auto;">Incoming Policy</div>
+
     <a href="{{ route('firewall.policy-create', [
         'fw' => request()->segment(3),
         'policyType' => 'incoming-internal-and-vpn'

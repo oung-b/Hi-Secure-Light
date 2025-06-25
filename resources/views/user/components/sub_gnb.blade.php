@@ -181,7 +181,7 @@
                             FW#4 (Control & Monitoring System Zone)
                         </div>
                     </a>
-                    <a href="{{ route('firewall.policy', 'fw4') }}" class="sub-gnb-menu">
+                    <a href="{{ route('firewall.policy', 'fw3') }}" class="sub-gnb-menu">
                         <div class="sub-gnb-menu-title">
                             FW#5 (Navigation & Communication Zone)
                         </div>
