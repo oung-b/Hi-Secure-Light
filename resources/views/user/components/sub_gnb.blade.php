@@ -21,45 +21,38 @@
                 </div>
 
                 <div class="sub-gnb-menu-list row-group">
-                    <a href="https://210.91.170.99:50005" target="_blank">
+                    <a href="https://210.91.170.99:4434" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#1
                             </div>
                         </div>
                     </a>
-                    <a href="https://210.91.170.99:40002" target="_blank">
+                    <a href="https://210.91.170.99:4441" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#2
                             </div>
                         </div>
                     </a>
-                    <a href="https://210.91.170.99:40003" target="_blank">
+                    <a href="https://210.91.170.99:4442" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#3
                             </div>
                         </div>
                     </a>
-                    <a href="https://210.91.170.99:40004" target="_blank">
+                    <a href="https://210.91.170.99:4443" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#4
                             </div>
                         </div>
                     </a>
-                    <a href="https://210.91.170.99:40005" target="_blank">
+                    <a href="https://210.91.170.99:4445" target="_blank">
                         <div class="sub-gnb-menu">
                             <div class="sub-gnb-menu-title col-group">
                                 FW#5
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://210.91.170.99:40006" target="_blank">
-                        <div class="sub-gnb-menu">
-                            <div class="sub-gnb-menu-title col-group">
-                                FW#6
                             </div>
                         </div>
                     </a>
