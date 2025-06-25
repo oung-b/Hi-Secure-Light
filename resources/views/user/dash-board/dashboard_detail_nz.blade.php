@@ -31,7 +31,7 @@
                     <i class="xi-arrow-left"></i>
                 </a>
                 <h2 class="dashboard-detail-title">
-                    Maintenance Zone
+                    Navigation & Communication Zone
                 </h2>
             </div>
 
@@ -47,7 +47,7 @@
                                 <div class="state"></div>
                                 <img src="/images/dashboard_icon_firewall.png" alt="">
                                 <p class="device-item-title main">
-                                    Maintenance Zone
+                                    Navigation & Communication Zone
                                 </p>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
         </button>
         <div class="device-detail-title-wrap">
             <p class="before">
-                Maintenance Zone
+                Navigation & Communication Zone
             </p>
             <i class="xi-angle-right"></i>
             <p class="now">

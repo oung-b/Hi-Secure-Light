@@ -174,11 +174,10 @@ class DashBoardController extends Controller
         ];
     }
 
-    public function maintenanceZone()
+    public function navigationCommunicationZone()
     {
         $childDevices = [
-            Device::where("title", "ISS MINI PC")->first(),
-            Device::where("title", "HI-NAS")->first()
+            Device::where("title", "NAVI MINI PC")->first()
         ];
 
         // null인 디바이스들을 필터링
@@ -188,7 +187,7 @@ class DashBoardController extends Controller
 
         $totalDevices = [
             [
-                "title" => "ICMS System",
+                "title" => "Navigation & Communication System",
                 "count_wrong" => 0,
                 "status" => "Up",
                 "childDevices" => array_values($childDevices) // 인덱스 재정렬

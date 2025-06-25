@@ -122,9 +122,9 @@
                         {{-- <video class="bg-video" autoplay muted loop>
                             <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>
                         </video> --}}
-                       <img class="bg-video" src="/images/dashboard_bg_line.png" alt="" srcset="">
+                       <img class="bg-video" src="/images/dashboard__line.png" alt="" srcset="">
 
-                       <a href="{{ route('maintenance-zone') }}" data-id="FW#2" class="device-item up"
+                        <div data-id="FW#2" class="device-item up"
                            style="top: 200px; left: 0;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -134,7 +134,7 @@
                             <p class="device-item-title main">
                                 Maintenance Zone
                             </p>
-                        </a>
+                        </div>
 
                         <div data-id="FW#3" class="device-item up"
                            style="top: 400px; left: 0;">
@@ -218,7 +218,8 @@
                                 Control & Monitoring System Zone
                             </p>
                         </div>
-                        <div data-id="FW#5" class="device-item up"
+
+                        <a href="{{ route('navigation-communication-zone') }}" data-id="FW#5" class="device-item up"
                            style="top: 400px; left: 800px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
@@ -228,7 +229,7 @@
                             <p class="device-item-title main">
                                 Navigation & Communication Zone
                             </p>
-                        </div>
+                        </a>
                         {{-- <div class="device-item up" style="top: 600px; left: 600px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_server.png" alt="">
