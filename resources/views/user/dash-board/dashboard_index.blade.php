@@ -119,10 +119,10 @@
 
                 <div class="dashboard-content-wrap">
                     <div class="device-wrap" style="width: 970px; height: 770px; margin: 40px auto;">
-                        <video class="bg-video" autoplay muted loop>
+                        {{-- <video class="bg-video" autoplay muted loop>
                             <source src="/images/main_dashboard_bg.mp4" type="video/mp4"/>
-                        </video>
-{{--                        <img class="bg-video" src="/images/main_dashboard_bg_line.png" alt="" srcset="">--}}
+                        </video> --}}
+                       <img class="bg-video" src="/images/dashboard_line.png" alt="" srcset="">
 
                         <div data-id="FW#2" class="device-item up"
                            style="top: 200px; left: 0;">
@@ -148,7 +148,7 @@
                             </p>
                         </div>
 
-                        <div class="device-item up" data-id="FW1" style="top: 200px; left: 400px;">
+                        <div class="device-item up" data-id="FW#1" style="top: 200px; left: 400px;">
                             <div class="state"></div>
                             <img src="/images/dashboard_icon_firewall.png" alt="">
                             <p class="device-item-zone">
