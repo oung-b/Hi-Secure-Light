@@ -17,7 +17,6 @@ function closeLoading(){
     $(".loader").remove();
 }
 
-
 $(document).ready(function(){
     $(".m-script-pop").unbind("click").bind("click", function (){
         var target = $(this).attr("data-target");
@@ -51,6 +50,10 @@ $(document).ready(function(){
                 $(".modal-devices-warning").not(".noscript").find("tbody").html("");
 
                 devices.map(device => {
+                    if (device.title === "NAVI MINI PC") {
+                        device.title = "FW#5";
+                    }
+
                     $(`[data-id="${device.title}"]`).removeClass("up down critical warning unusual");
 
                     let totalStatus = device.totalStatus ? device.totalStatus.toLowerCase() : "";
